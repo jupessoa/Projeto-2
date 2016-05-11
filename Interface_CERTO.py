@@ -44,23 +44,77 @@ class InterfaceApp:
         self.logo.configure(text="S.O.S NOW")
         
         self.login = tk.Label(self.login_screen)
-        self.login.grid(row=2, column=2, sticky="nsew")
+        self.login.grid(row=0, column=2, sticky="nsew")
         self.login.configure(text="Login")
         
         self.inserir_login = tk.Entry(self.login_screen)
-        self.inserir_login.grid(row=3, column=1, columnspan=3, sticky="nsew")
+        self.inserir_login.grid(row=2, column=1, columnspan=3, sticky="nsew")
 
         self.senha = tk.Label(self.login_screen)
-        self.senha.grid(row=5, column=2, sticky="nsew")
+        self.senha.grid(row=3, column=2, sticky="nsew")
         self.senha.configure(text="Senha")
         
         self.inserir_senha = tk.Entry(self.login_screen)
-        self.inserir_senha.grid(row=6, column=1, columnspan=3, sticky="nsew")
+        self.inserir_senha.grid(row=4, column=1, columnspan=3, sticky="nsew")
         
         self.entrar = tk.Button(self.login_screen)
-        self.entrar.grid(row=8, column=2, sticky="nsew")
+        self.entrar.grid(row=6, column=2, sticky="nsew")
         self.entrar.configure(text="Entrar")
         self.entrar.configure(command=self.entrar_app)
+        
+        self.criar_novo_usuario = tk.Button(self.login_screen)
+        self.criar_novo_usuario.grid(row=8, column=2, sticky="nsew")
+        self.criar_novo_usuario.configure(text="Cadastre-se")
+        self.criar_novo_usuario.configure(command=self.novo_usuario)
+        
+         # Tela de novo usuário
+        
+        self.tela_novo_usuario = tk.Frame(self.window)
+        self.tela_novo_usuario.columnconfigure(0, minsize=80)
+        self.tela_novo_usuario.columnconfigure(1, minsize=80)
+        self.tela_novo_usuario.columnconfigure(2, minsize=80)
+        self.tela_novo_usuario.columnconfigure(3, minsize=80)
+        self.tela_novo_usuario.columnconfigure(4, minsize=80)
+        self.tela_novo_usuario.rowconfigure(0, minsize=60)
+        self.tela_novo_usuario.rowconfigure(1, minsize=60)
+        self.tela_novo_usuario.rowconfigure(2, minsize=60)
+        self.tela_novo_usuario.rowconfigure(3, minsize=60)
+        self.tela_novo_usuario.rowconfigure(4, minsize=60)
+        self.tela_novo_usuario.rowconfigure(5, minsize=60)
+        self.tela_novo_usuario.rowconfigure(6, minsize=60)
+        self.tela_novo_usuario.rowconfigure(7, minsize=60)
+        self.tela_novo_usuario.rowconfigure(8, minsize=60)
+        self.tela_novo_usuario.rowconfigure(9, minsize=60)
+        
+        self.voltar_login = tk.Button(self.tela_novo_usuario)
+        self.voltar_login.grid(row=0, column=0, sticky="nsew")
+        self.voltar_login.configure(text="Voltar")
+        self.voltar_login.configure(command=self.voltar_pagina_inicial)
+        
+        self.tela_novo_usuario.grid(row=0, column=0, sticky="nsew")
+        
+        self.logo = tk.Label(self.tela_novo_usuario)
+        self.logo.grid(row=1, column=1, columnspan=3, sticky="nsew")
+        self.logo.configure(text="SOS NOW")
+        
+        self.nome_usuario = tk.Label(self.tela_novo_usuario)
+        self.nome_usuario.grid(row=2, column=2, sticky="nsew")
+        self.nome_usuario.configure(text="Insira um usuário:")
+        
+        self.inserir_nome_usuario = tk.Entry(self.tela_novo_usuario)
+        self.inserir_nome_usuario.grid(row=3, column=1, columnspan=3, sticky="nsew")
+
+        self.criar_senha = tk.Label(self.tela_novo_usuario)
+        self.criar_senha.grid(row=5, column=2, sticky="nsew")
+        self.criar_senha.configure(text="Insira uma senha:")
+        
+        self.inserir_criar_senha = tk.Entry(self.tela_novo_usuario)
+        self.inserir_criar_senha.grid(row=6, column=1, columnspan=3, sticky="nsew")
+        
+        self.salvar_novo_usuario = tk.Button(self.tela_novo_usuario)
+        self.salvar_novo_usuario.grid(row=8, column=2, sticky="nsew")
+        self.salvar_novo_usuario.configure(text="Criar")
+        self.salvar_novo_usuario.configure(command=self.voltar_pagina_inicial)
 
         # Tela de forums.        
         self.foruns = tk.Frame(self.window)
@@ -344,6 +398,9 @@ class InterfaceApp:
         
     def entrar_app(self):
         self.foruns.tkraise()
+        
+    def novo_usuario(self):
+        self.tela_novo_usuario.tkraise()
         
     def tema1_clicado(self):
         self.janela1.tkraise()
