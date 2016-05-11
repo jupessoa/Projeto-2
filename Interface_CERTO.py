@@ -17,6 +17,7 @@ class InterfaceApp:
         self.window.title("App")
         self.window.rowconfigure(0, minsize=600)
         self.window.columnconfigure(0, minsize=400)
+        
 
         # Tela de login.
         self.login_screen = tk.Frame(self.window)
@@ -40,7 +41,7 @@ class InterfaceApp:
         
         self.logo = tk.Label(self.login_screen)
         self.logo.grid(row=1, column=1, columnspan=3, sticky="nsew")
-        self.logo.configure(text="LOGO")
+        self.logo.configure(text="S.O.S NOW")
         
         self.login = tk.Label(self.login_screen)
         self.login.grid(row=2, column=2, sticky="nsew")
@@ -79,6 +80,14 @@ class InterfaceApp:
         self.foruns.rowconfigure(9, minsize=60)
         self.foruns.grid(row=0, column=0, rowspan=10, columnspan=3, sticky="nsew")
         
+        #Botão voltar para o início
+        
+        self.voltar_inicio = tk.Button(self.foruns)
+        self.voltar_inicio.grid(row=0, column=0, sticky="nsew")
+        self.voltar_inicio.configure(text="Voltar")
+        self.voltar_inicio.configure(command=self.voltar_pagina_inicial)
+    
+        
         self.tema1 = tk.Button(self.foruns)
         self.tema1.grid(row=1, column=1, sticky="nsew")
         self.tema1.configure(text="Relacionamento")
@@ -99,7 +108,8 @@ class InterfaceApp:
         self.tema4.configure(text="Viagens")
         self.tema4.configure(command=self.tema4_clicado)
 
-        # Tela primeiro forum.        
+        # Tela primeiro forum.     
+   
         self.janela1 = tk.Frame(self.window)
         self.janela1.grid(row=0, column=0, rowspan=10, columnspan=3, sticky="nsew")
         
@@ -123,6 +133,11 @@ class InterfaceApp:
         self.janela1.rowconfigure(7, minsize=60)
         self.janela1.rowconfigure(8, minsize=60)
         self.janela1.rowconfigure(9, minsize=60)
+        
+        self.voltar_foruns = tk.Button(self.janela1)
+        self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
+        self.voltar_foruns.configure(text="Voltar")
+        self.voltar_foruns.configure(command=self.voltar_aos_foruns)
         
         self.titulo_tema1 = tk.Label(self.janela1)
         self.titulo_tema1.grid(row=0, column=3, columnspan=2, sticky="nsew")
@@ -154,6 +169,7 @@ class InterfaceApp:
         
         
         # Tela segundo forum.        
+        
         self.janela2 = tk.Frame(self.window)
         self.janela2.grid(row=0, column=0, rowspan=10, columnspan=3, sticky="nsew")
         
@@ -176,6 +192,11 @@ class InterfaceApp:
         self.janela2.rowconfigure(7, minsize=60)
         self.janela2.rowconfigure(8, minsize=60)
         self.janela2.rowconfigure(9, minsize=60)
+        
+        self.voltar_foruns = tk.Button(self.janela2)
+        self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
+        self.voltar_foruns.configure(text="Voltar")
+        self.voltar_foruns.configure(command=self.voltar_aos_foruns)
         
         #Caixa de texto, botão perguntar e Label
         
@@ -202,7 +223,8 @@ class InterfaceApp:
         self.titulo_tema2.configure(text="Vida profissional")
 
         
-        # Tela terceiro forum.        
+        # Tela terceiro forum.      
+        
         self.janela3 = tk.Frame(self.window)
         self.janela3.grid(row=0, column=0, rowspan=10, columnspan=3, sticky="nsew")
         
@@ -224,7 +246,12 @@ class InterfaceApp:
         self.janela3.rowconfigure(6, minsize=60)
         self.janela3.rowconfigure(7, minsize=60)
         self.janela3.rowconfigure(8, minsize=60)
-        self.janela3.rowconfigure(9, minsize=60)        
+        self.janela3.rowconfigure(9, minsize=60)  
+        
+        self.voltar_foruns = tk.Button(self.janela3)
+        self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
+        self.voltar_foruns.configure(text="Voltar")
+        self.voltar_foruns.configure(command=self.voltar_aos_foruns)
         
         self.titulo_tema3 = tk.Label(self.janela3)
         self.titulo_tema3.grid(row=0, column=3, columnspan=2, sticky="nsew")
@@ -276,7 +303,12 @@ class InterfaceApp:
         self.janela4.rowconfigure(6, minsize=60)
         self.janela4.rowconfigure(7, minsize=60)
         self.janela4.rowconfigure(8, minsize=60)
-        self.janela4.rowconfigure(9, minsize=60)        
+        self.janela4.rowconfigure(9, minsize=60) 
+        
+        self.voltar_foruns = tk.Button(self.janela4)
+        self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
+        self.voltar_foruns.configure(text="Voltar")
+        self.voltar_foruns.configure(command=self.voltar_aos_foruns)
         
         self.titulo_tema4 = tk.Label(self.janela4)
         self.titulo_tema4.grid(row=0, column=3, columnspan=2, sticky="nsew")
@@ -336,6 +368,12 @@ class InterfaceApp:
     
     def perguntar4(self):
         self.label_perg4.configure(text=self.perg_janela4.get())
+        
+    def voltar_pagina_inicial(self):
+        self.login_screen.tkraise()
+        
+    def voltar_aos_foruns(self):
+        self.foruns.tkraise()
 
 
 app = InterfaceApp()
