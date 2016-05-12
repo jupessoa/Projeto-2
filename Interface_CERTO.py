@@ -18,7 +18,10 @@ class InterfaceApp:
         self.window.rowconfigure(0, minsize=600)
         self.window.columnconfigure(0, minsize=400)
         self.window.wm_iconbitmap('iconee.ico')
-        self.window.logo = tk.PhotoImage(file="logo2.png")
+        self.window.background = tk.PhotoImage(file="back2.png")
+        self.window.logo = tk.PhotoImage(file="logo3.png")
+
+
         
 
         # Tela de login.
@@ -40,9 +43,14 @@ class InterfaceApp:
         self.login_screen.rowconfigure(9, minsize=60)
         
         self.login_screen.grid(row=0, column=0, sticky="nsew")
+
+        self.background = tk.Label(self.login_screen, image=self.window.background) #BACKGROUND
+        self.background.grid(row = 0, column = 0) #BACKGROUND
+        self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
         
-        self.logo = tk.Label(self.login_screen, image= self.window.logo)
-        self.logo.grid(row=1, column=1, columnspan=3, sticky="nsew")
+        self.logo = tk.Label(self.login_screen, image= self.window.logo) #LOGO
+        self.logo.grid(row=1, column=1, columnspan=3, sticky="nsew") #LOGO
+        
         
         self.login = tk.Label(self.login_screen)
         self.login.grid(row=0, column=2, sticky="nsew")
