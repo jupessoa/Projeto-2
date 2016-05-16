@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Apr 29 07:32:34 2016
+Created on Wed May  4 10:14:51 2016
 
-@author: pesso
+@author: Vitória
 """
 
 import tkinter as tk
@@ -20,9 +20,13 @@ class InterfaceApp:
         self.window.title("SOS Now")
         self.window.rowconfigure(0, minsize=600)
         self.window.columnconfigure(0, minsize=400)
+        self.window.wm_iconbitmap('iconee.ico')
+        self.window.background = tk.PhotoImage(file="back2.png")
+        self.window.logo = tk.PhotoImage(file="logo3.png")
         
-
-        # Tela de login.
+        
+        # Tela de login
+        
         self.login_screen = tk.Frame(self.window)
         self.login_screen.columnconfigure(0, minsize=80)
         self.login_screen.columnconfigure(1, minsize=80)
@@ -42,12 +46,15 @@ class InterfaceApp:
         
         self.login_screen.grid(row=0, column=0, sticky="nsew")
         
-        self.logo = tk.Label(self.login_screen)
-        self.logo.grid(row=1, column=1, columnspan=3, sticky="nsew")
-        self.logo.configure(text="S.O.S NOW")
+        self.background = tk.Label(self.login_screen, image=self.window.background) #BACKGROUND
+        self.background.grid(row = 0, column = 0) #BACKGROUND
+        self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
+        
+        self.logo = tk.Label(self.login_screen, image= self.window.logo) #LOGO
+        self.logo.grid(row=0, column=1, columnspan=3, sticky="nsew") #LOGO
         
         self.login = tk.Label(self.login_screen)
-        self.login.grid(row=0, column=2, sticky="nsew")
+        self.login.grid(row=1, column=2, sticky="nsew")
         self.login.configure(text="Login")
         
         self.inserir_login = tk.Entry(self.login_screen)
@@ -59,6 +66,7 @@ class InterfaceApp:
         
         self.inserir_senha = tk.Entry(self.login_screen)
         self.inserir_senha.grid(row=4, column=1, columnspan=3, sticky="nsew")
+        self.inserir_senha.configure(show="*")
         
         self.entrar = tk.Button(self.login_screen)
         self.entrar.grid(row=6, column=2, sticky="nsew")
@@ -73,6 +81,7 @@ class InterfaceApp:
         self.criar_novo_usuario.grid(row=8, column=2, sticky="nsew")
         self.criar_novo_usuario.configure(text="Cadastre-se")
         self.criar_novo_usuario.configure(command=self.novo_usuario)
+        
         
          # Tela de novo usuário
         
@@ -95,9 +104,17 @@ class InterfaceApp:
                 
         self.tela_novo_usuario.grid(row=0, column=0, sticky="nsew")
         
-        self.logo = tk.Label(self.tela_novo_usuario)
-        self.logo.grid(row=1, column=1, columnspan=3, sticky="nsew")
-        self.logo.configure(text="SOS NOW")
+        self.background = tk.Label(self.tela_novo_usuario, image=self.window.background) #BACKGROUND
+        self.background.grid(row = 0, column = 0) #BACKGROUND
+        self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
+                
+        self.voltar_inicio = tk.Button(self.tela_novo_usuario)
+        self.voltar_inicio.grid(row=0, column=0, sticky="nsew")
+        self.voltar_inicio.configure(text="Voltar")
+        self.voltar_inicio.configure(command=self.voltar_pagina_inicial)        
+        
+        self.logo = tk.Label(self.tela_novo_usuario, image= self.window.logo) #LOGO
+        self.logo.grid(row=1, column=1, columnspan=3, sticky="nsew") #LOGO
         
         self.nome_usuario = tk.Label(self.tela_novo_usuario)
         self.nome_usuario.grid(row=2, column=2, sticky="nsew")
@@ -114,21 +131,22 @@ class InterfaceApp:
         
         self.inserir_criar_senha = tk.Entry(self.tela_novo_usuario)
         self.inserir_criar_senha.grid(row=5, column=1, columnspan=3, sticky="nsew")
+        self.inserir_criar_senha.configure(show="*")
                 
         self.nova_senha = tk.StringVar(self.inserir_criar_senha)
         #self.nova_senha.getpass(self.inserir_criar_senha)
         
+        self.condicao_senha = tk.Label(self.tela_novo_usuario)
+        self.condicao_senha.grid(row=6, column=1, sticky="nsew")
+        self.condicao_senha.configure(text="Mínimo 6 dígitos")
+        
         self.salvar_novo_usuario = tk.Button(self.tela_novo_usuario)
-        self.salvar_novo_usuario.grid(row=7, column=2, sticky="nsew")
+        self.salvar_novo_usuario.grid(row=8, column=2, sticky="nsew")
         self.salvar_novo_usuario.configure(text="Criar")
         self.salvar_novo_usuario.configure(command=self.cadastrar)
         
-        self.pos_cadastro = tk.Button(self.tela_novo_usuario)
-        self.pos_cadastro.grid(row=8, column=2, sticky="nsew")
-        self.pos_cadastro.configure(text="Página inicial")
-        self.pos_cadastro.configure(command=self.voltar_pagina_inicial)
-
-        # Tela de foruns.        
+        
+        # Tela de foruns       
               
         self.foruns = tk.Frame(self.window)
         self.foruns.columnconfigure(0, minsize=133)
@@ -148,25 +166,25 @@ class InterfaceApp:
         self.foruns.rowconfigure(10, minsize=60)
         self.foruns.grid(row=0, column=0, rowspan=10, columnspan=3, sticky="nsew")
         
-        self.logo = tk.Label(self.foruns)
-        self.logo.grid(row=0, column=1, sticky="nsew")
-        self.logo.configure(text="SOS NOW")
+        self.background = tk.Label(self.foruns, image=self.window.background) #BACKGROUND
+        self.background.grid(row = 0, column = 0) #BACKGROUND
+        self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
         
-        #Botão voltar para o início
+        self.logo = tk.Label(self.foruns, image= self.window.logo) #LOGO
+        self.logo.grid(row=1, column=0, columnspan=3, sticky="nsew") #LOGO
         
         self.voltar_inicio = tk.Button(self.foruns)
         self.voltar_inicio.grid(row=0, column=0, sticky="nsew")
         self.voltar_inicio.configure(text="Sair")
         self.voltar_inicio.configure(command=self.voltar_pagina_inicial)
     
-        
         self.tema1 = tk.Button(self.foruns)
-        self.tema1.grid(row=1, column=1, sticky="nsew")
+        self.tema1.grid(row=3, column=1, sticky="nsew")
         self.tema1.configure(text="Relacionamento")
         self.tema1.configure(command=self.tema1_clicado)
         
         self.tema2 = tk.Button(self.foruns)
-        self.tema2.grid(row=3, column=1, sticky="nsew")
+        self.tema2.grid(row=4, column=1, sticky="nsew")
         self.tema2.configure(text="Vida profissional")
         self.tema2.configure(command=self.tema2_clicado)
         
@@ -176,16 +194,17 @@ class InterfaceApp:
         self.tema3.configure(command=self.tema3_clicado)
         
         self.tema4 = tk.Button(self.foruns)
-        self.tema4.grid(row=7, column=1, sticky="nsew")
+        self.tema4.grid(row=6, column=1, sticky="nsew")
         self.tema4.configure(text="Viagens")
         self.tema4.configure(command=self.tema4_clicado)
         
         self.tema5 = tk.Button(self.foruns)
-        self.tema5.grid(row=9, column=1, sticky="nsew")
+        self.tema5.grid(row=7, column=1, sticky="nsew")
         self.tema5.configure(text="Saúde")
         self.tema5.configure(command=self.tema5_clicado)
 
-        # Tela primeiro forum.     
+
+        # Primeiro forum    
    
         self.janela1 = tk.Frame(self.window)
         self.janela1.grid(row=0, column=0, rowspan=10, columnspan=3, sticky="nsew")
@@ -210,6 +229,10 @@ class InterfaceApp:
         self.janela1.rowconfigure(8, minsize=60)
         self.janela1.rowconfigure(9, minsize=60)
         
+        self.background = tk.Label(self.janela1, image=self.window.background) #BACKGROUND
+        self.background.grid(row = 0, column = 0) #BACKGROUND
+        self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
+        
         self.voltar_foruns = tk.Button(self.janela1)
         self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
         self.voltar_foruns.configure(text="Voltar")
@@ -227,8 +250,6 @@ class InterfaceApp:
         self.botao_janela1.grid(row=2, column=6, sticky="nsew")
         self.botao_janela1.configure(text="Perguntar")
         
-        #Caixa de texto e label (pergunta)        
-        
         self.conteudo_texto1 = tk.StringVar(self.janela1)        
         
         self.perg_janela1 = tk.Entry(self.janela1)
@@ -244,7 +265,7 @@ class InterfaceApp:
         self.botao_janela1.configure(text="Perguntar", command=self.perguntar1)
         
         
-        # Tela segundo forum.        
+        # Segundo forum        
         
         self.janela2 = tk.Frame(self.window)
         self.janela2.grid(row=0, column=0, rowspan=10, columnspan=3, sticky="nsew")
@@ -269,12 +290,14 @@ class InterfaceApp:
         self.janela2.rowconfigure(8, minsize=60)
         self.janela2.rowconfigure(9, minsize=60)
         
+        self.background = tk.Label(self.janela2, image=self.window.background) #BACKGROUND
+        self.background.grid(row = 0, column = 0) #BACKGROUND
+        self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
+        
         self.voltar_foruns = tk.Button(self.janela2)
         self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
         self.voltar_foruns.configure(text="Voltar")
         self.voltar_foruns.configure(command=self.voltar_aos_foruns)
-        
-        #Caixa de texto, botão perguntar e Label
         
         self.conteudo_texto2 = tk.StringVar(self.janela2)        
         
@@ -290,13 +313,12 @@ class InterfaceApp:
         self.botao_janela2.grid(row=2, column=6, sticky="nsew")
         self.botao_janela2.configure(text="Perguntar", command=self.perguntar2)
         
-        # Título da página (tema) 
-        
         self.titulo_tema2 = tk.Label(self.janela2)
         self.titulo_tema2.grid(row=0, column=3, columnspan=2, sticky="nsew")
         self.titulo_tema2.configure(text="Vida profissional")
 
-        # Tela terceiro forum.      
+
+        # Terceiro forum      
         
         self.janela3 = tk.Frame(self.window)
         self.janela3.grid(row=0, column=0, rowspan=10, columnspan=3, sticky="nsew")
@@ -319,7 +341,11 @@ class InterfaceApp:
         self.janela3.rowconfigure(6, minsize=60)
         self.janela3.rowconfigure(7, minsize=60)
         self.janela3.rowconfigure(8, minsize=60)
-        self.janela3.rowconfigure(9, minsize=60)  
+        self.janela3.rowconfigure(9, minsize=60)
+        
+        self.background = tk.Label(self.janela3, image=self.window.background) #BACKGROUND
+        self.background.grid(row = 0, column = 0) #BACKGROUND
+        self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
         
         self.voltar_foruns = tk.Button(self.janela3)
         self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
@@ -333,12 +359,9 @@ class InterfaceApp:
         self.perg_janela3 = tk.Entry(self.janela3)
         self.perg_janela3.grid(row=2, column=1, columnspan=5, sticky="nsew")
         
-        
         self.botao_janela3 = tk.Button(self.janela3)
         self.botao_janela3.grid(row=2, column=6, sticky="nsew")
         self.botao_janela3.configure(text="Perguntar")
-        
-        #Caixa de texto, botão perguntar e Label
         
         self.conteudo_texto3 = tk.StringVar(self.janela3)        
         
@@ -354,7 +377,9 @@ class InterfaceApp:
         self.botao_janela3.grid(row=2, column=6, sticky="nsew")
         self.botao_janela3.configure(text="Perguntar", command=self.perguntar3)
         
-        # Tela quarto forum.        
+        
+        # Quarto forum
+        
         self.janela4 = tk.Frame(self.window)
         self.janela4.grid(row=0, column=0, rowspan=10, columnspan=3, sticky="nsew")
         
@@ -378,6 +403,10 @@ class InterfaceApp:
         self.janela4.rowconfigure(8, minsize=60)
         self.janela4.rowconfigure(9, minsize=60) 
         
+        self.background = tk.Label(self.janela4, image=self.window.background) #BACKGROUND
+        self.background.grid(row = 0, column = 0) #BACKGROUND
+        self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
+        
         self.voltar_foruns = tk.Button(self.janela4)
         self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
         self.voltar_foruns.configure(text="Voltar")
@@ -390,12 +419,9 @@ class InterfaceApp:
         self.perg_janela4 = tk.Entry(self.janela4)
         self.perg_janela4.grid(row=2, column=1, columnspan=5, sticky="nsew")
         
-        
         self.botao_janela4 = tk.Button(self.janela4)
         self.botao_janela4.grid(row=2, column=6, sticky="nsew")
         self.botao_janela4.configure(text="Perguntar")
-        
-        #Caixa de texto, botão perguntar e Label
         
         self.conteudo_texto4 = tk.StringVar(self.janela4)        
         
@@ -411,7 +437,9 @@ class InterfaceApp:
         self.botao_janela4.grid(row=2, column=6, sticky="nsew")
         self.botao_janela4.configure(text="Perguntar", command=self.perguntar4)
         
-        # Tela quinto forum
+        
+        # Quinto forum
+        
         self.janela5 = tk.Frame(self.window)
         self.janela5.grid(row=0, column=0, rowspan=10, columnspan=3, sticky="nsew")
         
@@ -433,7 +461,11 @@ class InterfaceApp:
         self.janela5.rowconfigure(6, minsize=60)
         self.janela5.rowconfigure(7, minsize=60)
         self.janela5.rowconfigure(8, minsize=60)
-        self.janela5.rowconfigure(9, minsize=60) 
+        self.janela5.rowconfigure(9, minsize=60)
+        
+        self.background = tk.Label(self.janela5, image=self.window.background) #BACKGROUND
+        self.background.grid(row = 0, column = 0) #BACKGROUND
+        self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
         
         self.voltar_foruns = tk.Button(self.janela5)
         self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
@@ -452,8 +484,6 @@ class InterfaceApp:
         self.botao_janela5.grid(row=2, column=6, sticky="nsew")
         self.botao_janela5.configure(text="Perguntar")
         
-        #Caixa de texto, botão perguntar e Label
-        
         self.conteudo_texto5 = tk.StringVar(self.janela5)        
         
         self.perg_janela5 = tk.Entry(self.janela5)
@@ -468,7 +498,9 @@ class InterfaceApp:
         self.botao_janela5.grid(row=2, column=6, sticky="nsew")
         self.botao_janela5.configure(text="Perguntar", command=self.perguntar5)
         
+        
         self.login_screen.tkraise()
+        
         
     def iniciar(self):
         self.window.mainloop()
@@ -480,11 +512,16 @@ class InterfaceApp:
         self.tela_novo_usuario.tkraise()
     
     def cadastrar(self):
-        self.cadastro_usuario = self.inserir_nome_usuario.get()
-        self.cadastro_senha = self.inserir_criar_senha.get()
+        cadastro_usuario = self.inserir_nome_usuario.get()
+        cadastro_senha = self.inserir_criar_senha.get()
         
-        firebase.put("/Cadastro/", name = self.cadastro_usuario, data = {'usuario': self.cadastro_usuario , 'senha': self.cadastro_senha})
-       
+        dicionario_1 = firebase.get("/Cadastro", "/{0}".format(cadastro_usuario))
+        
+        #if cadastro_usuario == dicionario_1["usuario"]:
+            #self.janela_erro_1 = tkm.showinfo("SOS Now","Usuário já existente. Tente novamente!")
+        
+        #else:
+        firebase.put("/Cadastro/", name = cadastro_usuario, data = {'usuario': cadastro_usuario , 'senha': cadastro_senha})
         self.janela_sucesso = tkm.showinfo("SOS Now", "Cadastro realizado com sucesso!")
         self.limpa_cadastro()
         
@@ -493,22 +530,18 @@ class InterfaceApp:
             self.voltar_pagina_inicial()
         
     def Tentativa_login(self):
-        Usuario = self.inserir_nome_usuario.get()
-        senha = self.inserir_criar_senha.get()
-        dicionario = firebase.get("/Cadastro", "/{0}".format(Usuario))        
+        Usuario = self.inserir_login.get()
+        senha = self.inserir_senha.get()
         
-        try: 
-           Usuario == dicionario["usuario"]
-           if senha == dicionario["senha"]:
-              self.entrar_app
-
-           else:
-              self.janela_erro_1 = tkm.showinfo("Usuário e/ou senha inválidos. Tente novamente!")
+        dicionario_2 = firebase.get("/Cadastro", "/{0}".format(Usuario))
+                
+        if Usuario == dicionario_2["usuario"] and senha == dicionario_2["senha"]:
+            self.entrar_app()
         
-        except TypeError:
-            self.janela_erro_2 = tkm.showinfo("Usuário e/ou senha inválidos. Tente novamente!")        
-            
-    
+        else:
+            self.janela_erro_2 = tkm.showinfo("SOS Now","Usuário e/ou senha inválidos. Tente novamente!")
+        
+        
     def tema1_clicado(self):
         self.janela1.tkraise()
         
