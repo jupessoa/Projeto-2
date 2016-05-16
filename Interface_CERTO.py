@@ -6,8 +6,12 @@ Created on Fri Apr 29 07:32:34 2016
 """
 
 import tkinter as tk
+<<<<<<< HEAD
 import tkinter.messagebox as tkm
 from firebase import firebase
+=======
+#from firebase import firebase
+>>>>>>> c006ea802cbea51d0a4e906d10a330d46d94f2ab
 
 firebase = firebase.FirebaseApplication("https://sosfinal.firebaseio.com")
 
@@ -20,6 +24,11 @@ class InterfaceApp:
         self.window.title("SOS Now")
         self.window.rowconfigure(0, minsize=600)
         self.window.columnconfigure(0, minsize=400)
+        self.window.wm_iconbitmap('iconee.ico')
+        self.window.background = tk.PhotoImage(file="back2.png")
+        self.window.logo = tk.PhotoImage(file="logo3.png")
+
+
         
 
         # Tela de login.
@@ -41,10 +50,14 @@ class InterfaceApp:
         self.login_screen.rowconfigure(9, minsize=60)
         
         self.login_screen.grid(row=0, column=0, sticky="nsew")
+
+        self.background = tk.Label(self.login_screen, image=self.window.background) #BACKGROUND
+        self.background.grid(row = 0, column = 0) #BACKGROUND
+        self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
         
-        self.logo = tk.Label(self.login_screen)
-        self.logo.grid(row=1, column=1, columnspan=3, sticky="nsew")
-        self.logo.configure(text="S.O.S NOW")
+        self.logo = tk.Label(self.login_screen, image= self.window.logo) #LOGO
+        self.logo.grid(row=1, column=1, columnspan=3, sticky="nsew") #LOGO
+        
         
         self.login = tk.Label(self.login_screen)
         self.login.grid(row=0, column=2, sticky="nsew")
