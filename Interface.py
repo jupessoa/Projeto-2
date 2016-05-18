@@ -112,6 +112,7 @@ class InterfaceApp:
         self.salvar_novo_usuario.configure(command=self.tela_login)
         
         # Tela de forums.        
+        
         self.foruns = tk.Frame(self.window)
         self.foruns.columnconfigure(0, minsize=133)
         self.foruns.columnconfigure(1, minsize=133)

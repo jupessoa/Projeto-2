@@ -17,9 +17,10 @@ class InterfaceApp:
         self.window.title("App")
         self.window.rowconfigure(0, minsize=600)
         self.window.columnconfigure(0, minsize=400)
-        
+    
 
         # Tela de login.
+
         self.login_screen = tk.Frame(self.window)
         self.login_screen.columnconfigure(0, minsize=80)
         self.login_screen.columnconfigure(1, minsize=80)
@@ -117,6 +118,7 @@ class InterfaceApp:
         self.salvar_novo_usuario.configure(command=self.voltar_pagina_inicial)
 
         # Tela de forums.        
+
         self.foruns = tk.Frame(self.window)
         self.foruns.columnconfigure(0, minsize=133)
         self.foruns.columnconfigure(1, minsize=133)
@@ -162,7 +164,7 @@ class InterfaceApp:
         self.tema4.configure(text="Viagens")
         self.tema4.configure(command=self.tema4_clicado)
 
-        # Tela primeiro forum.     
+        #Tela primeiro forum.     
    
         self.janela1 = tk.Frame(self.window)
         self.janela1.grid(row=0, column=0, rowspan=10, columnspan=3, sticky="nsew")
@@ -188,41 +190,88 @@ class InterfaceApp:
         self.janela1.rowconfigure(8, minsize=60)
         self.janela1.rowconfigure(9, minsize=60)
         
+        #Botão voltar
+        
         self.voltar_foruns = tk.Button(self.janela1)
         self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
         self.voltar_foruns.configure(text="Voltar")
         self.voltar_foruns.configure(command=self.voltar_aos_foruns)
+         
+        #Título da página (tema)
         
         self.titulo_tema1 = tk.Label(self.janela1)
         self.titulo_tema1.grid(row=0, column=3, columnspan=2, sticky="nsew")
         self.titulo_tema1.configure(text="Relacionamento")
+    
         
-        self.perg_janela1 = tk.Entry(self.janela1)
-        self.perg_janela1.grid(row=2, column=1, columnspan=5, sticky="nsew")
+        #Botão da primeira pergunta e seus comentários
+        
+        self.comentarios_pergunta = tk.Frame(self.window)
+        self.comentarios_pergunta.columnconfigure(0, minsize=80)
+        self.comentarios_pergunta.columnconfigure(1, minsize=80)
+        self.comentarios_pergunta.columnconfigure(2, minsize=80)
+        self.comentarios_pergunta.columnconfigure(3, minsize=80)
+        self.comentarios_pergunta.columnconfigure(4, minsize=80)
+        self.comentarios_pergunta.rowconfigure(0, minsize=60)
+        self.comentarios_pergunta.rowconfigure(1, minsize=60)
+        self.comentarios_pergunta.rowconfigure(2, minsize=60)
+        self.comentarios_pergunta.rowconfigure(3, minsize=60)
+        self.comentarios_pergunta.rowconfigure(4, minsize=60)
+        self.comentarios_pergunta.rowconfigure(5, minsize=60)
+        self.comentarios_pergunta.rowconfigure(6, minsize=60)
+        self.comentarios_pergunta.rowconfigure(7, minsize=60)
+        self.comentarios_pergunta.rowconfigure(8, minsize=60)
+        self.comentarios_pergunta.rowconfigure(9, minsize=60)
+        
+
+        self.primeira_pergunta1 = tk.Button(self.janela1)
+        self.primeira_pergunta1.grid(row=4, column=1, columnspan=6, sticky="nsew")
+        self.primeira_pergunta1.configure(text="")
+        self.primeira_pergunta1.configure(command=self.entrar_pergunta)
         
         
-        self.botao_janela1 = tk.Button(self.janela1)
-        self.botao_janela1.grid(row=2, column=6, sticky="nsew")
-        self.botao_janela1.configure(text="Perguntar")
+        #Botão da segunda pergunta e seus comentários
         
-        #Caixa de texto e label (pergunta)        
+        self.segunda_pergunta1 = tk.Button(self.janela1)
+        self.segunda_pergunta1.grid(row=5, column=1, columnspan=6, sticky="nsew")
+        self.segunda_pergunta1.configure(text="")
+        
+        #Botão da terceira pergunta
+        
+        self.terceira_pergunta1 = tk.Button(self.janela1)
+        self.terceira_pergunta1.grid(row=6, column=1, columnspan=6, sticky="nsew")
+        self.terceira_pergunta1.configure(text="")
+        
+        #Botão da quarta pergunta
+        
+        self.quarta_pergunta1 = tk.Button(self.janela1)
+        self.quarta_pergunta1.grid(row=7, column=1, columnspan=6, sticky="nsew")
+        self.quarta_pergunta1.configure(text="")
+        
+        #Botão da quinta pergunta
+        
+        self.quinta_pergunta1 = tk.Button(self.janela1)
+        self.quinta_pergunta1.grid(row=8, column=1, columnspan=6, sticky="nsew")
+        self.quinta_pergunta1.configure(text="")
+        
+        #Caixa de texto e pergunta feita        
         
         self.conteudo_texto1 = tk.StringVar(self.janela1)        
         
         self.perg_janela1 = tk.Entry(self.janela1)
         self.perg_janela1.grid(row=2, column=1, columnspan=5, sticky="nsew")
         
-        self.conteudo_label1 = tk.StringVar(self.janela1)
-                
-        self.label_perg1 = tk.Label(self.janela1)
-        self.label_perg1.grid(row=3, column=1, columnspan=4, sticky="nsew")
+        self.conteudo_1 = tk.StringVar(self.janela1)
+
+        
+        #Botão perguntar
         
         self.botao_janela1 = tk.Button(self.janela1)
         self.botao_janela1.grid(row=2, column=6, sticky="nsew")
         self.botao_janela1.configure(text="Perguntar", command=self.perguntar1)
         
         
-        # Tela segundo forum.        
+        #Tela segundo forum.        
         
         self.janela2 = tk.Frame(self.window)
         self.janela2.grid(row=0, column=0, rowspan=10, columnspan=3, sticky="nsew")
@@ -247,29 +296,59 @@ class InterfaceApp:
         self.janela2.rowconfigure(8, minsize=60)
         self.janela2.rowconfigure(9, minsize=60)
         
+        #Botão voltar
+        
         self.voltar_foruns = tk.Button(self.janela2)
         self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
         self.voltar_foruns.configure(text="Voltar")
         self.voltar_foruns.configure(command=self.voltar_aos_foruns)
         
-        #Caixa de texto, botão perguntar e Label
+        
+        #Botão da primeira pergunta
+
+        self.primeira_pergunta2 = tk.Button(self.janela2)
+        self.primeira_pergunta2.grid(row=4, column=1, columnspan=6, sticky="nsew")
+        self.primeira_pergunta2.configure(text="")
+        
+        #Botão da segunda pergunta
+        
+        self.segunda_pergunta2 = tk.Button(self.janela2)
+        self.segunda_pergunta2.grid(row=5, column=1, columnspan=6, sticky="nsew")
+        self.segunda_pergunta2.configure(text="")
+        
+        #Botão da terceira pergunta
+        
+        self.terceira_pergunta2 = tk.Button(self.janela2)
+        self.terceira_pergunta2.grid(row=6, column=1, columnspan=6, sticky="nsew")
+        self.terceira_pergunta2.configure(text="")
+        
+        #Botão da quarta pergunta
+        
+        self.quarta_pergunta2 = tk.Button(self.janela2)
+        self.quarta_pergunta2.grid(row=7, column=1, columnspan=6, sticky="nsew")
+        self.quarta_pergunta2.configure(text="")
+        
+        #Botão da quinta pergunta
+        
+        self.quinta_pergunta2 = tk.Button(self.janela2)
+        self.quinta_pergunta2.grid(row=8, column=1, columnspan=6, sticky="nsew")
+        self.quinta_pergunta2.configure(text="")
+        
+        #Caixa de texto e pergunta feita 
         
         self.conteudo_texto2 = tk.StringVar(self.janela2)        
         
         self.perg_janela2 = tk.Entry(self.janela2)
         self.perg_janela2.grid(row=2, column=1, columnspan=5, sticky="nsew")
         
-        self.conteudo_label2 = tk.StringVar(self.janela2)
+        self.conteudo_2 = tk.StringVar(self.janela2)
                 
-        self.label_perg2 = tk.Label(self.janela2)
-        self.label_perg2.grid(row=3, column=1, columnspan=4, sticky="nsew")
+        #Botão perguntar
         
         self.botao_janela2 = tk.Button(self.janela2)
         self.botao_janela2.grid(row=2, column=6, sticky="nsew")
         self.botao_janela2.configure(text="Perguntar", command=self.perguntar2)
-        
-        
-        
+          
         # Título da página (tema) 
         
         self.titulo_tema2 = tk.Label(self.janela2)
@@ -302,40 +381,68 @@ class InterfaceApp:
         self.janela3.rowconfigure(8, minsize=60)
         self.janela3.rowconfigure(9, minsize=60)  
         
+        #Botão voltar
+        
         self.voltar_foruns = tk.Button(self.janela3)
         self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
         self.voltar_foruns.configure(text="Voltar")
         self.voltar_foruns.configure(command=self.voltar_aos_foruns)
         
+        # Título da página (tema)
+        
         self.titulo_tema3 = tk.Label(self.janela3)
         self.titulo_tema3.grid(row=0, column=3, columnspan=2, sticky="nsew")
         self.titulo_tema3.configure(text="Amizade")
         
-        self.perg_janela3 = tk.Entry(self.janela3)
-        self.perg_janela3.grid(row=2, column=1, columnspan=5, sticky="nsew")
+  
+        #Botão da primeira pergunta
+
+        self.primeira_pergunta3 = tk.Button(self.janela3)
+        self.primeira_pergunta3.grid(row=4, column=1, columnspan=6, sticky="nsew")
+        self.primeira_pergunta3.configure(text="")
         
+        #Botão da segunda pergunta
         
-        self.botao_janela3 = tk.Button(self.janela3)
-        self.botao_janela3.grid(row=2, column=6, sticky="nsew")
-        self.botao_janela3.configure(text="Perguntar")
+        self.segunda_pergunta3 = tk.Button(self.janela3)
+        self.segunda_pergunta3.grid(row=5, column=1, columnspan=6, sticky="nsew")
+        self.segunda_pergunta3.configure(text="")
         
-        #Caixa de texto, botão perguntar e Label
+        #Botão da terceira pergunta
+        
+        self.terceira_pergunta3 = tk.Button(self.janela3)
+        self.terceira_pergunta3.grid(row=6, column=1, columnspan=6, sticky="nsew")
+        self.terceira_pergunta3.configure(text="")
+        
+        #Botão da quarta pergunta
+        
+        self.quarta_pergunta3 = tk.Button(self.janela3)
+        self.quarta_pergunta3.grid(row=7, column=1, columnspan=6, sticky="nsew")
+        self.quarta_pergunta3.configure(text="")
+        
+        #Botão da quinta pergunta
+        
+        self.quinta_pergunta3 = tk.Button(self.janela3)
+        self.quinta_pergunta3.grid(row=8, column=1, columnspan=6, sticky="nsew")
+        self.quinta_pergunta3.configure(text="")
+        
+        #Caixa de texto e pergunta feita 
         
         self.conteudo_texto3 = tk.StringVar(self.janela3)        
         
         self.perg_janela3 = tk.Entry(self.janela3)
         self.perg_janela3.grid(row=2, column=1, columnspan=5, sticky="nsew")
         
-        self.conteudo_label3 = tk.StringVar(self.janela3)
+        self.conteudo_3 = tk.StringVar(self.janela3)
                 
-        self.label_perg3 = tk.Label(self.janela3)
-        self.label_perg3.grid(row=3, column=1, columnspan=4, sticky="nsew")
+        
+        #Botão perguntar
         
         self.botao_janela3 = tk.Button(self.janela3)
         self.botao_janela3.grid(row=2, column=6, sticky="nsew")
         self.botao_janela3.configure(text="Perguntar", command=self.perguntar3)
         
-        # Tela quarto forum.        
+        #Tela quarto forum.    
+        
         self.janela4 = tk.Frame(self.window)
         self.janela4.grid(row=0, column=0, rowspan=10, columnspan=3, sticky="nsew")
         
@@ -364,27 +471,54 @@ class InterfaceApp:
         self.voltar_foruns.configure(text="Voltar")
         self.voltar_foruns.configure(command=self.voltar_aos_foruns)
         
+        # Título da página (tema)
+        
         self.titulo_tema4 = tk.Label(self.janela4)
         self.titulo_tema4.grid(row=0, column=3, columnspan=2, sticky="nsew")
         self.titulo_tema4.configure(text="Viagens")
         
-        self.perg_janela4 = tk.Entry(self.janela4)
-        self.perg_janela4.grid(row=2, column=1, columnspan=5, sticky="nsew")
         
+        #Botão da primeira pergunta
+
+        self.primeira_pergunta4 = tk.Button(self.janela4)
+        self.primeira_pergunta4.grid(row=4, column=1, columnspan=6, sticky="nsew")
+        self.primeira_pergunta4.configure(text="")
         
-        self.botao_janela4 = tk.Button(self.janela4)
-        self.botao_janela4.grid(row=2, column=6, sticky="nsew")
-        self.botao_janela4.configure(text="Perguntar")#Caixa de texto, botão perguntar e Label
+        #Botão da segunda pergunta
+        
+        self.segunda_pergunta4 = tk.Button(self.janela4)
+        self.segunda_pergunta4.grid(row=5, column=1, columnspan=6, sticky="nsew")
+        self.segunda_pergunta4.configure(text="")
+        
+        #Botão da terceira pergunta
+        
+        self.terceira_pergunta4 = tk.Button(self.janela4)
+        self.terceira_pergunta4.grid(row=6, column=1, columnspan=6, sticky="nsew")
+        self.terceira_pergunta4.configure(text="")
+        
+        #Botão da quarta pergunta
+        
+        self.quarta_pergunta4 = tk.Button(self.janela4)
+        self.quarta_pergunta4.grid(row=7, column=1, columnspan=6, sticky="nsew")
+        self.quarta_pergunta4.configure(text="")
+        
+        #Botão da quinta pergunta
+        
+        self.quinta_pergunta4 = tk.Button(self.janela4)
+        self.quinta_pergunta4.grid(row=8, column=1, columnspan=6, sticky="nsew")
+        self.quinta_pergunta4.configure(text="")
+        
+        #Caixa de texto e pergunta feita 
         
         self.conteudo_texto4 = tk.StringVar(self.janela4)        
         
         self.perg_janela4 = tk.Entry(self.janela4)
         self.perg_janela4.grid(row=2, column=1, columnspan=5, sticky="nsew")
         
-        self.conteudo_label4 = tk.StringVar(self.janela4)
-                
-        self.label_perg4 = tk.Label(self.janela4)
-        self.label_perg4.grid(row=3, column=1, columnspan=4, sticky="nsew")
+        self.conteudo_4 = tk.StringVar(self.janela4)
+
+        
+        #Botão perguntar
         
         self.botao_janela4 = tk.Button(self.janela4)
         self.botao_janela4.grid(row=2, column=6, sticky="nsew")
@@ -392,6 +526,13 @@ class InterfaceApp:
         
         
         self.login_screen.tkraise()
+        
+        self.numero_perguntas1 = 0
+        self.numero_perguntas2 = 0
+        self.numero_perguntas3 = 0
+        self.numero_perguntas4 = 0
+        self.numero_perguntas5 = 0
+        
         
     def iniciar(self):
         self.window.mainloop()
@@ -413,18 +554,99 @@ class InterfaceApp:
         
     def tema4_clicado(self):
         self.janela4.tkraise()
+
         
     def perguntar1(self):
-        self.label_perg1.configure(text=self.perg_janela1.get())    
+
+        if self.numero_perguntas1 == 0:
+            self.primeira_pergunta1.configure(text=self.perg_janela1.get())
+            self.numero_perguntas1 += 1
+            
+        elif self.numero_perguntas1 == 1:
+            self.segunda_pergunta1.configure(text=self.perg_janela1.get())
+            self.numero_perguntas1 += 1
+            
+        elif self.numero_perguntas1 == 2:
+            self.terceira_pergunta1.configure(text=self.perg_janela1.get())
+            self.numero_perguntas1 += 1
+            
+        elif self.numero_perguntas1 == 3:
+            self.quarta_pergunta1.configure(text=self.perg_janela1.get())
+            self.numero_perguntas1 += 1
+            
+        elif self.numero_perguntas1 == 4:
+            self.quinta_pergunta1.configure(text=self.perg_janela1.get())
+            self.numero_perguntas1 +=1
+        
         
     def perguntar2(self):
-        self.label_perg2.configure(text=self.perg_janela2.get())
+        
+        if self.numero_perguntas2 == 0:
+            self.primeira_pergunta2.configure(text=self.perg_janela2.get())
+            self.numero_perguntas2 += 1
+            
+        elif self.numero_perguntas2 == 1:
+            self.segunda_pergunta2.configure(text=self.perg_janela2.get())
+            self.numero_perguntas2 += 1
+            
+        elif self.numero_perguntas2 == 2:
+            self.terceira_pergunta2.configure(text=self.perg_janela2.get())
+            self.numero_perguntas2 += 1
+            
+        elif self.numero_perguntas2 == 3:
+            self.quarta_pergunta2.configure(text=self.perg_janela2.get())
+            self.numero_perguntas2 += 1
+            
+        elif self.numero_perguntas2 == 4:
+            self.quinta_pergunta2.configure(text=self.perg_janela2.get())
+            self.numero_perguntas2 +=1
         
     def perguntar3(self):
-        self.label_perg3.configure(text=self.perg_janela3.get())
+        
+        if self.numero_perguntas3 == 0:
+            self.primeira_pergunta3.configure(text=self.perg_janela3.get())
+            self.numero_perguntas3 += 1
+            
+        elif self.numero_perguntas3 == 1:
+            self.segunda_pergunta3.configure(text=self.perg_janela3.get())
+            self.numero_perguntas3 += 1
+            
+        elif self.numero_perguntas3 == 2:
+            self.terceira_pergunta3.configure(text=self.perg_janela3.get())
+            self.numero_perguntas3 += 1
+            
+        elif self.numero_perguntas3 == 3:
+            self.quarta_pergunta3.configure(text=self.perg_janela3.get())
+            self.numero_perguntas3 += 1
+            
+        elif self.numero_perguntas3 == 4:
+            self.quinta_pergunta3.configure(text=self.perg_janela3.get())
+            self.numero_perguntas3 +=1
     
     def perguntar4(self):
-        self.label_perg4.configure(text=self.perg_janela4.get())
+        
+        if self.numero_perguntas4 == 0:
+            self.primeira_pergunta4.configure(text=self.perg_janela4.get())
+            self.numero_perguntas4 += 1
+            
+        elif self.numero_perguntas4 == 1:
+            self.segunda_pergunta4.configure(text=self.perg_janela4.get())
+            self.numero_perguntas4 += 1
+            
+        elif self.numero_perguntas4 == 2:
+            self.terceira_pergunta4.configure(text=self.perg_janela4.get())
+            self.numero_perguntas4 += 1
+            
+        elif self.numero_perguntas4 == 3:
+            self.quarta_pergunta4.configure(text=self.perg_janela4.get())
+            self.numero_perguntas4 += 1
+            
+        elif self.numero_perguntas4 == 4:
+            self.quinta_pergunta4.configure(text=self.perg_janela4.get())
+            self.numero_perguntas4 +=1
+            
+    def entrar_pergunta(self):
+        self.comentarios_pergunta.tkraise()
         
     def voltar_pagina_inicial(self):
         self.login_screen.tkraise()
