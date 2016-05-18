@@ -22,6 +22,7 @@ class InterfaceApp:
         self.window.wm_iconbitmap('iconee.ico')
         self.window.background = tk.PhotoImage(file="back2.png")
         self.window.logo = tk.PhotoImage(file="logo3.png")
+        self.window.voltar = tk.PhotoImage(file="voltar2.png")
         
         
         # Tela de login
