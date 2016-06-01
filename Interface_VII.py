@@ -6,9 +6,9 @@ Created on Wed May  4 10:14:51 2016
 from tkinter import ttk
 import tkinter as tk
 import tkinter.messagebox as tkm
-from firebase import firebase
+#  cew3wfrom firebase import firebase
 
-firebase = firebase.FirebaseApplication("https://sosfinal.firebaseio.com")
+#firebase = firebase.FirebaseApplication("https://sosfinal.firebaseio.com")
 
 class InterfaceApp:
     def __init__(self):
@@ -20,9 +20,8 @@ class InterfaceApp:
         self.window.rowconfigure(0, minsize=600)
         self.window.columnconfigure(0, minsize=400)
         self.window.wm_iconbitmap('iconee.ico')
-        self.window.background = tk.PhotoImage(file="back2.png")
-        self.window.logo = tk.PhotoImage(file="logo3.png")
-        self.window.voltar = tk.PhotoImage(file="voltar2.png")
+        self.window.background = tk.PhotoImage(file="2222.png")
+        self.window.logo = tk.PhotoImage(file="logo4.png")
         
         
         # Tela de login
@@ -55,31 +54,31 @@ class InterfaceApp:
         
         self.login = tk.Label(self.login_screen)
         self.login.grid(row=1, column=2, sticky="nsew")
-        self.login.configure(text="Login")
+        self.login.configure(text="Login", font =('AR ESSENCE', '16', 'bold') , fg = 'black')
         
         self.inserir_login = tk.Entry(self.login_screen)
         self.inserir_login.grid(row=2, column=1, columnspan=3, sticky="nsew")
 
         self.senha = tk.Label(self.login_screen)
         self.senha.grid(row=3, column=2, sticky="nsew")
-        self.senha.configure(text="Senha")
+        self.senha.configure(text="Senha", font =('AR ESSENCE', '16', 'bold') , fg = 'black')
         
         self.inserir_senha = tk.Entry(self.login_screen)
         self.inserir_senha.grid(row=4, column=1, columnspan=3, sticky="nsew")
         self.inserir_senha.configure(show="*")
         
-        self.entrar = ttk.Button(self.login_screen)
+        self.entrar = tk.Button(self.login_screen)
         self.entrar.grid(row=6, column=2, sticky="nsew")
-        self.entrar.configure(text="Entrar")
+        self.entrar.configure(text="Entrar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
         self.entrar.configure(command=self.Tentativa_login)
         
         self.login = tk.Label(self.login_screen)
         self.login.grid(row=7, column=1, columnspan=3, sticky="nsew")
-        self.login.configure(text="Ainda não possui uma conta?")        
+        self.login.configure(text="Ainda não possui uma conta?", font =('AR ESSENCE', '12', 'bold') , fg = 'black')        
         
-        self.criar_novo_usuario = ttk.Button(self.login_screen)
+        self.criar_novo_usuario = tk.Button(self.login_screen)
         self.criar_novo_usuario.grid(row=8, column=2, sticky="nsew")
-        self.criar_novo_usuario.configure(text="Cadastre-se")
+        self.criar_novo_usuario.configure(text="Cadastre-se", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
         self.criar_novo_usuario.configure(command=self.novo_usuario)
         
         
@@ -108,7 +107,7 @@ class InterfaceApp:
         self.background.grid(row = 0, column = 0) #BACKGROUND
         self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
                 
-        self.voltar_inicio = ttk.Button(self.tela_novo_usuario)
+        self.voltar_inicio = tk.Button(self.tela_novo_usuario, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
         self.voltar_inicio.grid(row=0, column=0, sticky="nsew")
         self.voltar_inicio.configure(text="Voltar")
         self.voltar_inicio.configure(command=self.voltar_pagina_inicial)        
@@ -118,7 +117,7 @@ class InterfaceApp:
         
         self.nome_usuario = tk.Label(self.tela_novo_usuario)
         self.nome_usuario.grid(row=2, column=2, sticky="nsew")
-        self.nome_usuario.configure(text="Insira um usuário:")
+        self.nome_usuario.configure(text="Insira um usuário:", font =('AR ESSENCE', '12') , fg = 'black')
         
         self.inserir_nome_usuario = tk.Entry(self.tela_novo_usuario)
         self.inserir_nome_usuario.grid(row=3, column=1, columnspan=3, sticky="nsew")
@@ -127,7 +126,7 @@ class InterfaceApp:
         
         self.criar_senha = tk.Label(self.tela_novo_usuario)
         self.criar_senha.grid(row=4, column=2, sticky="nsew")
-        self.criar_senha.configure(text="Insira uma senha:")
+        self.criar_senha.configure(text="Insira uma senha:", font =('AR ESSENCE', '12') , fg = 'black')
         
         self.inserir_criar_senha = tk.Entry(self.tela_novo_usuario)
         self.inserir_criar_senha.grid(row=5, column=1, columnspan=3, sticky="nsew")
@@ -138,11 +137,11 @@ class InterfaceApp:
         
         self.condicao_senha = tk.Label(self.tela_novo_usuario)
         self.condicao_senha.grid(row=6, column=1, sticky="nsew")
-        self.condicao_senha.configure(text="Mínimo 6 dígitos")
+        self.condicao_senha.configure(text="Mínimo 6 dígitos", font =('Arial', '7', 'bold') , fg = 'black')
         
-        self.salvar_novo_usuario = ttk.Button(self.tela_novo_usuario)
+        self.salvar_novo_usuario = tk.Button(self.tela_novo_usuario)
         self.salvar_novo_usuario.grid(row=8, column=2, sticky="nsew")
-        self.salvar_novo_usuario.configure(text="Criar")
+        self.salvar_novo_usuario.configure(text="Criar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
         self.salvar_novo_usuario.configure(command=self.cadastrar)
         
         
@@ -173,34 +172,34 @@ class InterfaceApp:
         self.logo = tk.Label(self.foruns, image= self.window.logo) #LOGO
         self.logo.grid(row=1, column=0, columnspan=3, sticky="nsew") #LOGO
         
-        self.voltar_inicio = ttk.Button(self.foruns)
+        self.voltar_inicio = tk.Button(self.foruns)
         self.voltar_inicio.grid(row=0, column=0, sticky="nsew")
-        self.voltar_inicio.configure(text="Sair")
+        self.voltar_inicio.configure(text="Sair", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
         self.voltar_inicio.configure(command=self.voltar_pagina_inicial)
     
-        self.tema1 = ttk.Button(self.foruns)
+        self.tema1 = tk.Button(self.foruns)
         self.tema1.grid(row=3, column=1, sticky="nsew")
-        self.tema1.configure(text="Relacionamento")
+        self.tema1.configure(text="Relacionamento", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
         self.tema1.configure(command=self.tema1_clicado)
         
-        self.tema2 = ttk.Button(self.foruns)
+        self.tema2 = tk.Button(self.foruns)
         self.tema2.grid(row=4, column=1, sticky="nsew")
-        self.tema2.configure(text="Vida profissional")
+        self.tema2.configure(text="Vida profissional", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
         self.tema2.configure(command=self.tema2_clicado)
         
-        self.tema3 = ttk.Button(self.foruns)
+        self.tema3 = tk.Button(self.foruns)
         self.tema3.grid(row=5, column=1, sticky="nsew")
-        self.tema3.configure(text="Amizade")
+        self.tema3.configure(text="Amizade", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
         self.tema3.configure(command=self.tema3_clicado)
         
-        self.tema4 = ttk.Button(self.foruns)
+        self.tema4 = tk.Button(self.foruns)
         self.tema4.grid(row=6, column=1, sticky="nsew")
-        self.tema4.configure(text="Viagens")
+        self.tema4.configure(text="Viagens", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
         self.tema4.configure(command=self.tema4_clicado)
         
-        self.tema5 = ttk.Button(self.foruns)
+        self.tema5 = tk.Button(self.foruns)
         self.tema5.grid(row=7, column=1, sticky="nsew")
-        self.tema5.configure(text="Saúde")
+        self.tema5.configure(text="Saúde", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
         self.tema5.configure(command=self.tema5_clicado)
 
 
@@ -233,9 +232,9 @@ class InterfaceApp:
         self.background.grid(row = 0, column = 0) #BACKGROUND
         self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
         
-        self.voltar_foruns = ttk.Button(self.janela1)
+        self.voltar_foruns = tk.Button(self.janela1)
         self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
-        self.voltar_foruns.configure(text="Voltar")
+        self.voltar_foruns.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
         self.voltar_foruns.configure(command=self.voltar_aos_foruns)
         
         self.titulo_tema1 = tk.Label(self.janela1)

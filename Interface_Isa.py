@@ -53,7 +53,7 @@ class InterfaceApp:
 
         self.background = tk.Label(self.login_screen, image=self.window.background) #BACKGROUND
         self.background.grid(row = 0, column = 0) #BACKGROUND
-        self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
+        self.background.place(x=0, y=0, relwidth=10, relheight=1) #BACKGROUND
         
         self.logo = tk.Label(self.login_screen, image= self.window.logo) #LOGO
         self.logo.grid(row=1, column=1, columnspan=3, sticky="nsew") #LOGO
