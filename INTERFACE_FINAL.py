@@ -8,9 +8,9 @@ Created on Tue May 31 22:12:29 2016
 from tkinter import ttk
 import tkinter as tk
 import tkinter.messagebox as tkm
-#from firebase import firebase
+from firebase import firebase
 
-#firebase = firebase.FirebaseApplication("https://sosfinal.firebaseio.com")
+firebase = firebase.FirebaseApplication("https://sosfinal.firebaseio.com")
 
 class InterfaceApp:
     def __init__(self):
@@ -26,7 +26,6 @@ class InterfaceApp:
         self.window.logo = tk.PhotoImage(file="logo4.png")
         self.window.resizable(False,False)
         
-        
         # Tela de login
         
         self.login_screen = tk.Frame(self.window)
@@ -35,16 +34,16 @@ class InterfaceApp:
         self.login_screen.columnconfigure(2, minsize=80)
         self.login_screen.columnconfigure(3, minsize=80)
         self.login_screen.columnconfigure(4, minsize=80)
-        self.login_screen.rowconfigure(0, minsize=45)
+        self.login_screen.rowconfigure(0, minsize=40)
         self.login_screen.rowconfigure(1, minsize=45)
-        self.login_screen.rowconfigure(2, minsize=45)
+        self.login_screen.rowconfigure(2, minsize=40)
         self.login_screen.rowconfigure(3, minsize=45)
         self.login_screen.rowconfigure(4, minsize=45)
         self.login_screen.rowconfigure(5, minsize=45)
         self.login_screen.rowconfigure(6, minsize=45)
-        self.login_screen.rowconfigure(7, minsize=45)
+        self.login_screen.rowconfigure(7, minsize=40)
         self.login_screen.rowconfigure(8, minsize=45)
-        self.login_screen.rowconfigure(9, minsize=45)
+        self.login_screen.rowconfigure(9, minsize=40)
         self.login_screen.rowconfigure(10, minsize=45)
         self.login_screen.rowconfigure(11, minsize=45)
         self.login_screen.rowconfigure(12, minsize=45)
@@ -84,7 +83,7 @@ class InterfaceApp:
         
         self.criar_novo_usuario = tk.Button(self.login_screen)
         self.criar_novo_usuario.grid(row=11, column=2, sticky="nsew")
-        self.criar_novo_usuario.configure(text="Cadastre-se", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.criar_novo_usuario.configure(text="Cadastre-se", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         self.criar_novo_usuario.configure(command=self.novo_usuario)
         
         
@@ -118,9 +117,8 @@ class InterfaceApp:
                 
         self.voltar_inicio = tk.Button(self.tela_novo_usuario)
         self.voltar_inicio.grid(row=0, column=0, sticky="nsew")
-        #self.voltar_inicio.configure(image = self.window.voltar)
-        self.voltar_inicio.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
-        self.voltar_inicio.configure(command=self.voltar_pagina_inicial)        
+        self.voltar_inicio.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '14'), fg='gray92')
+        self.voltar_inicio.configure(command=self.voltar_pagina_inicial) 
         
         self.logo = tk.Label(self.tela_novo_usuario, image= self.window.logo) #LOGO
         self.logo.grid(row=2, column=1, columnspan=3, sticky="nsew") #LOGO
@@ -150,7 +148,7 @@ class InterfaceApp:
         
         self.salvar_novo_usuario = tk.Button(self.tela_novo_usuario)
         self.salvar_novo_usuario.grid(row=10, column=2, sticky="nsew")
-        self.salvar_novo_usuario.configure(text="Criar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.salvar_novo_usuario.configure(text="Criar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         self.salvar_novo_usuario.configure(command=self.cadastrar)
         
         
@@ -185,40 +183,40 @@ class InterfaceApp:
         
         self.voltar_inicio = tk.Button(self.foruns)
         self.voltar_inicio.grid(row=0, column=0, sticky="nsew")
-        self.voltar_inicio.configure(text="Sair", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.voltar_inicio.configure(text="Sair", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         self.voltar_inicio.configure(command=self.voltar_pagina_inicial)
     
         self.tema1 = tk.Button(self.foruns)
         self.tema1.grid(row=3, column=1, columnspan=3, sticky="nsew")
-        self.tema1.configure(text="Relacionamento", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.tema1.configure(text="Relacionamento", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         self.tema1.configure(command=self.tema1_clicado)
         
         self.tema2 = tk.Button(self.foruns)
         self.tema2.grid(row=4, column=1, columnspan=3, sticky="nsew")
-        self.tema2.configure(text="Trabalho", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.tema2.configure(text="Trabalho", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         self.tema2.configure(command=self.tema2_clicado)
         
         self.tema3 = tk.Button(self.foruns)
         self.tema3.grid(row=5, column=1, columnspan=3, sticky="nsew")
-        self.tema3.configure(text="Amizade", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.tema3.configure(text="Amizade", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         self.tema3.configure(command=self.tema3_clicado)
         
         self.tema4 = tk.Button(self.foruns)
         self.tema4.grid(row=6, column=1, columnspan=3, sticky="nsew")
-        self.tema4.configure(text="Viagens", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.tema4.configure(text="Viagens", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         self.tema4.configure(command=self.tema4_clicado)
         
         self.tema5 = tk.Button(self.foruns)
         self.tema5.grid(row=7, column=1, columnspan=3, sticky="nsew")
-        self.tema5.configure(text="Saúde", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.tema5.configure(text="Saúde", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         self.tema5.configure(command=self.tema5_clicado)
         
         self.tema6 = tk.Button(self.foruns)
         self.tema6.grid(row=8, column=1, columnspan=3, sticky="nsew")
-        self.tema6.configure(text="Família", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.tema6.configure(text="Família", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         self.tema6.configure(command=self.tema6_clicado)
 
-        
+
         # Primeiro forum    
    
         self.janela1 = tk.Frame(self.window)
@@ -251,25 +249,25 @@ class InterfaceApp:
         
         self.voltar_foruns = tk.Button(self.janela1)
         self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
-        self.voltar_foruns.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.voltar_foruns.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         self.voltar_foruns.configure(command=self.voltar_aos_foruns)
         
         self.titulo_tema1 = tk.Label(self.janela1)
         self.titulo_tema1.grid(row=2, column=3, columnspan=2, sticky="nsew")
-        self.titulo_tema1.configure(text="Relacionamento")
+        self.titulo_tema1.configure(text="Relacionamento", font =('AR ESSENCE', '18') , fg = 'black')
         
         # Perguntar        
         
         self.conteudo_texto1 = tk.StringVar(self.janela1)        
         
         self.perg_janela1 = tk.Entry(self.janela1)
-        self.perg_janela1.grid(row=4, column=1, columnspan=5, sticky="nsew")
+        self.perg_janela1.grid(row=4, column=1, columnspan=4, sticky="nsew")
         
         self.conteudo_1 = tk.StringVar(self.janela1)
         
         self.botao_janela1 = tk.Button(self.janela1)
-        self.botao_janela1.grid(row=4, column=6, sticky="nsew")
-        self.botao_janela1.configure(text="Perguntar", command=self.perguntar_forum1, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.botao_janela1.grid(row=4, column=5, sticky="nsew")
+        self.botao_janela1.configure(text="Perguntar", command=self.perguntar_forum1, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         
        
         # Segundo forum        
@@ -304,12 +302,12 @@ class InterfaceApp:
         
         self.voltar_foruns = tk.Button(self.janela2)
         self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
-        self.voltar_foruns.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.voltar_foruns.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         self.voltar_foruns.configure(command=self.voltar_aos_foruns)
         
         self.titulo_tema2 = tk.Label(self.janela2)
         self.titulo_tema2.grid(row=2, column=3, columnspan=2, sticky="nsew")
-        self.titulo_tema2.configure(text="Trabalho")
+        self.titulo_tema2.configure(text="Trabalho", font =('AR ESSENCE', '18') , fg = 'black')
         
         # Perguntar 
         
@@ -322,7 +320,7 @@ class InterfaceApp:
         
         self.botao_janela2 = tk.Button(self.janela2)
         self.botao_janela2.grid(row=4, column=6, sticky="nsew")
-        self.botao_janela2.configure(text="Perguntar", command=self.perguntar_forum2, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.botao_janela2.configure(text="Perguntar", command=self.perguntar_forum2, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         
               
         # Terceiro forum      
@@ -357,12 +355,12 @@ class InterfaceApp:
         
         self.voltar_foruns = tk.Button(self.janela3)
         self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
-        self.voltar_foruns.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.voltar_foruns.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         self.voltar_foruns.configure(command=self.voltar_aos_foruns)
         
         self.titulo_tema3 = tk.Label(self.janela3)
         self.titulo_tema3.grid(row=2, column=3, columnspan=2, sticky="nsew")
-        self.titulo_tema3.configure(text="Amizade")
+        self.titulo_tema3.configure(text="Amizade", font =('AR ESSENCE', '18') , fg = 'black')
         
          # Perguntar 
         
@@ -375,7 +373,7 @@ class InterfaceApp:
         
         self.botao_janela3 = tk.Button(self.janela3)
         self.botao_janela3.grid(row=4, column=6, sticky="nsew")
-        self.botao_janela3.configure(text="Perguntar", command=self.perguntar_forum3, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.botao_janela3.configure(text="Perguntar", command=self.perguntar_forum3, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         
         
         # Quarto forum
@@ -410,12 +408,12 @@ class InterfaceApp:
         
         self.voltar_foruns = tk.Button(self.janela4)
         self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
-        self.voltar_foruns.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.voltar_foruns.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         self.voltar_foruns.configure(command=self.voltar_aos_foruns)
         
         self.titulo_tema4 = tk.Label(self.janela4)
         self.titulo_tema4.grid(row=2, column=3, columnspan=2, sticky="nsew")
-        self.titulo_tema4.configure(text="Viagens")
+        self.titulo_tema4.configure(text="Viagens", font =('AR ESSENCE', '18') , fg = 'black')
         
         # Perguntar 
         
@@ -428,7 +426,7 @@ class InterfaceApp:
         
         self.botao_janela4 = tk.Button(self.janela4)
         self.botao_janela4.grid(row=4, column=6, sticky="nsew")
-        self.botao_janela4.configure(text="Perguntar", command=self.perguntar_forum4, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.botao_janela4.configure(text="Perguntar", command=self.perguntar_forum4, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         
         
         # Quinto forum
@@ -463,12 +461,12 @@ class InterfaceApp:
         
         self.voltar_foruns = tk.Button(self.janela5)
         self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
-        self.voltar_foruns.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.voltar_foruns.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         self.voltar_foruns.configure(command=self.voltar_aos_foruns)
         
         self.titulo_tema5 = tk.Label(self.janela5)
         self.titulo_tema5.grid(row=2, column=3, columnspan=2, sticky="nsew")
-        self.titulo_tema5.configure(text="Saúde")
+        self.titulo_tema5.configure(text="Saúde", font =('AR ESSENCE', '18') , fg = 'black')
         
         # Perguntar 
         
@@ -483,7 +481,7 @@ class InterfaceApp:
                 
         self.botao_janela5 = tk.Button(self.janela5)
         self.botao_janela5.grid(row=4, column=6, sticky="nsew")
-        self.botao_janela5.configure(text="Perguntar", command=self.perguntar_forum5, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.botao_janela5.configure(text="Perguntar", command=self.perguntar_forum5, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         
         
         # Sexto forum
@@ -518,12 +516,12 @@ class InterfaceApp:
         
         self.voltar_foruns = tk.Button(self.janela6)
         self.voltar_foruns.grid(row=0, column=0, columnspan=2, sticky="nsew")
-        self.voltar_foruns.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
+        self.voltar_foruns.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         self.voltar_foruns.configure(command=self.voltar_aos_foruns)
         
         self.titulo_tema6 = tk.Label(self.janela6)
         self.titulo_tema6.grid(row=2, column=3, columnspan=2, sticky="nsew")
-        self.titulo_tema6.configure(text="Família")
+        self.titulo_tema6.configure(text="Família", font =('AR ESSENCE', '18') , fg = 'black')
         
         # Perguntar 
         
@@ -538,7 +536,7 @@ class InterfaceApp:
                 
         self.botao_janela6 = tk.Button(self.janela6)
         self.botao_janela6.grid(row=4, column=6, sticky="nsew")
-        self.botao_janela6.configure(text="Perguntar", command=self.perguntar_forum6)
+        self.botao_janela6.configure(text="Perguntar", command=self.perguntar_forum6, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '16'), fg='gray92')
         
         
         # Números    
@@ -621,6 +619,14 @@ class InterfaceApp:
         
         
     def tema1_clicado(self):
+        #abrir_1 = len(firebase.get("/Foruns/Relacionamento"))
+        #abrir_1_texto = firebase.get("/Foruns/Relacionamento"
+                
+        #for i in range(abrir_1)
+        #    self.primeira_pergunta1 = tk.Button(self.janela1)
+        #    self.primeira_pergunta1.grid(row=(5 + i), column=1, columnspan=6, sticky="nsew")
+        #    self.primeira_pergunta1.configure(text=abrir_1_texto)
+           
         self.janela1.tkraise()
         
     def tema2_clicado(self):
@@ -650,7 +656,7 @@ class InterfaceApp:
         
         firebase.put("/Foruns/Relacionamento/", name = forum1, data = {})
         
-             
+                     
     def perguntar_forum2(self):
         self.primeira_pergunta2 = tk.Button(self.janela2)
         self.primeira_pergunta2.grid(row="{0}".format(self.numero_perguntas_2), column=1, columnspan=6, sticky="nsew")
@@ -712,411 +718,423 @@ class InterfaceApp:
         
     
     def responder1(self):
-        self.primeira_resposta = tk.Label(self.comentarios)
+        self.primeira_resposta = tk.Label(self.comentarios1)
         self.primeira_resposta.grid(row="{0}".format(self.numero_respostas1), column=1, columnspan=6, sticky="nsew")
         self.primeira_resposta.configure(text="")
         self.numero_respostas1 += 1
-        self.primeira_resposta.configure(text=self.comentario_espaco.get())
+        self.primeira_resposta.configure(text=self.comentario_espaco1.get(), font =('AR ESSENCE', '10') , fg = 'black')
         
         forum1 = self.perg_janela1.get()
-        resposta1 = self.comentario_espaco.get()
+        resposta1 = self.comentario_espaco1.get()
         firebase.put("/Foruns/Relacionamento/", name = "{0}".format(forum1), data = {'{0}'.format(self.x1): resposta1})
         self.x1 += 1
         
     
     def responder2(self):
-        self.primeira_resposta = tk.Label(self.comentarios)
+        self.primeira_resposta = tk.Label(self.comentarios2)
         self.primeira_resposta.grid(row="{0}".format(self.numero_respostas2), column=1, columnspan=6, sticky="nsew")
         self.primeira_resposta.configure(text="")
         self.numero_respostas2 += 1
-        self.primeira_resposta.configure(text=self.comentario_espaco.get())
+        self.primeira_resposta.configure(text=self.comentario_espaco2.get(), font =('AR ESSENCE', '10') , fg = 'black')
         
         forum2 = self.perg_janela2.get()
-        resposta2 = self.comentario_espaco.get()
+        resposta2 = self.comentario_espaco2.get()
         firebase.put("/Foruns/Trabalho/", name = "{0}".format(forum2), data = {'{0}'.format(self.x2): resposta2})
         self.x2 += 1        
         
     
     def responder3(self):
-        self.primeira_resposta = tk.Label(self.comentarios)
+        self.primeira_resposta = tk.Label(self.comentarios3)
         self.primeira_resposta.grid(row="{0}".format(self.numero_respostas3), column=1, columnspan=6, sticky="nsew")
         self.primeira_resposta.configure(text="")
         self.numero_respostas3 += 1
-        self.primeira_resposta.configure(text=self.comentario_espaco.get())
+        self.primeira_resposta.configure(text=self.comentario_espaco3.get(), font =('AR ESSENCE', '10') , fg = 'black')
         
         forum3 = self.perg_janela3.get()
-        resposta3 = self.comentario_espaco.get()
+        resposta3 = self.comentario_espaco3.get()
         firebase.put("/Foruns/Amizade/", name = "{0}".format(forum3), data = {'{0}'.format(self.x3): resposta3})
         self.x3 += 1
         
     
     def responder4(self):
-        self.primeira_resposta = tk.Label(self.comentarios)
+        self.primeira_resposta = tk.Label(self.comentarios4)
         self.primeira_resposta.grid(row="{0}".format(self.numero_respostas4), column=1, columnspan=6, sticky="nsew")
         self.primeira_resposta.configure(text="")
         self.numero_respostas4 += 1
-        self.primeira_resposta.configure(text=self.comentario_espaco.get())
+        self.primeira_resposta.configure(text=self.comentario_espaco4.get(), font =('AR ESSENCE', '10') , fg = 'black')
         
         forum4 = self.perg_janela4.get()
-        resposta4 = self.comentario_espaco.get()
+        resposta4 = self.comentario_espaco4.get()
         firebase.put("/Foruns/Viagens/{0}", name = "{0}".format(forum4), data = {'{0}'.format(self.x4): resposta4})
         self.x4 += 1
         
     
     def responder5(self):
-        self.primeira_resposta = tk.Label(self.comentarios)
+        self.primeira_resposta = tk.Label(self.comentarios5)
         self.primeira_resposta.grid(row="{0}".format(self.numero_respostas5), column=1, columnspan=6, sticky="nsew")
         self.primeira_resposta.configure(text="")
         self.numero_respostas5 += 1
-        self.primeira_resposta.configure(text=self.comentario_espaco.get())
+        self.primeira_resposta.configure(text=self.comentario_espaco5.get(), font =('AR ESSENCE', '10') , fg = 'black')
         
         forum5 = self.perg_janela5.get()
-        resposta5 = self.comentario_espaco.get()
+        resposta5 = self.comentario_espaco5.get()
         firebase.put("/Foruns/Saude/", name = "{0}".format(forum5), data = {'{0}'.format(self.x5): resposta5})
         self.x5 += 1
         
     
     def responder6(self):
-        self.primeira_resposta = tk.Label(self.comentarios)
+        self.primeira_resposta = tk.Label(self.comentarios6)
         self.primeira_resposta.grid(row="{0}".format(self.numero_respostas6), column=1, columnspan=6, sticky="nsew")
         self.primeira_resposta.configure(text="")
         self.numero_respostas6 += 1
-        self.primeira_resposta.configure(text=self.comentario_espaco.get())
+        self.primeira_resposta.configure(text=self.comentario_espaco6.get(), font =('AR ESSENCE', '10') , fg = 'black')
         
         forum6 = self.perg_janela6.get()
-        resposta6 = self.comentario_espaco.get()
+        resposta6 = self.comentario_espaco6.get()
         firebase.put("/Foruns/Familia/", name = "{0}".format(forum6), data = {'{0}'.format(self.x6): resposta6})
         self.x6 += 1
         
             
     def entrar_pergunta1(self):
         
-        self.comentarios = tk.Frame(self.window)
-        self.comentarios.columnconfigure(0, minsize=50)
-        self.comentarios.columnconfigure(1, minsize=50)
-        self.comentarios.columnconfigure(2, minsize=50)
-        self.comentarios.columnconfigure(3, minsize=50)
-        self.comentarios.columnconfigure(4, minsize=50)
-        self.comentarios.columnconfigure(5, minsize=50)
-        self.comentarios.columnconfigure(6, minsize=50)
-        self.comentarios.columnconfigure(7, minsize=50)
-        self.comentarios.rowconfigure(0, minsize=60)
-        self.comentarios.rowconfigure(1, minsize=60)
-        self.comentarios.rowconfigure(2, minsize=60)
-        self.comentarios.rowconfigure(3, minsize=60)
-        self.comentarios.rowconfigure(4, minsize=60)
-        self.comentarios.rowconfigure(5, minsize=60)
-        self.comentarios.rowconfigure(6, minsize=60)
-        self.comentarios.rowconfigure(7, minsize=60)
-        self.comentarios.rowconfigure(8, minsize=60)
-        self.comentarios.rowconfigure(9, minsize=60)
-        self.comentarios.grid(row=0, column=0, sticky="nsew")
+        self.comentarios1 = tk.Frame(self.window)
+        self.comentarios1.columnconfigure(0, minsize=50)
+        self.comentarios1.columnconfigure(1, minsize=50)
+        self.comentarios1.columnconfigure(2, minsize=50)
+        self.comentarios1.columnconfigure(3, minsize=50)
+        self.comentarios1.columnconfigure(4, minsize=50)
+        self.comentarios1.columnconfigure(5, minsize=50)
+        self.comentarios1.columnconfigure(6, minsize=50)
+        self.comentarios1.columnconfigure(7, minsize=50)
+        self.comentarios1.rowconfigure(0, minsize=45)
+        self.comentarios1.rowconfigure(1, minsize=45)
+        self.comentarios1.rowconfigure(2, minsize=45)
+        self.comentarios1.rowconfigure(3, minsize=45)
+        self.comentarios1.rowconfigure(4, minsize=45)
+        self.comentarios1.rowconfigure(5, minsize=45)
+        self.comentarios1.rowconfigure(6, minsize=45)
+        self.comentarios1.rowconfigure(7, minsize=45)
+        self.comentarios1.rowconfigure(8, minsize=45)
+        self.comentarios1.rowconfigure(9, minsize=45)
+        self.comentarios1.rowconfigure(10, minsize=45)
+        self.comentarios1.rowconfigure(11, minsize=45)
+        self.comentarios1.grid(row=0, column=0, sticky="nsew")
         
-        self.background = tk.Label(self.comentarios, image=self.window.background) #BACKGROUND
-        self.background.grid(row = 0, column = 0) #BACKGROUND
-        self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
+        self.background1 = tk.Label(self.comentarios1, image=self.window.background) #BACKGROUND
+        self.background1.grid(row = 0, column = 0) #BACKGROUND
+        self.background1.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
              
-        self.voltar_perguntas = tk.Button(self.comentarios)
-        self.voltar_perguntas.grid(row=0, column=0, columnspan=2, sticky="nsew")
-        self.voltar_perguntas.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
-        self.voltar_perguntas.configure(command=self.voltar_as_perguntas1)
+        self.voltar_perguntas1 = tk.Button(self.comentarios1)
+        self.voltar_perguntas1.grid(row=0, column=0, columnspan=2, sticky="nsew")
+        self.voltar_perguntas1.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '14'), fg='gray92')
+        self.voltar_perguntas1.configure(command=self.voltar_as_perguntas1)
         
-        self.titulo_comentarios = tk.Label(self.comentarios)
-        self.titulo_comentarios.grid(row=2, column=1, columnspan=6, sticky="nsew")
+        self.titulo_comentarios1 = tk.Label(self.comentarios1)
+        self.titulo_comentarios1.grid(row=2, column=0, columnspan=8, sticky="nsew")
         forum1 = self.perg_janela1.get()
-        self.titulo_comentarios.configure(text=forum1)
+        self.titulo_comentarios1.configure(text=forum1, font =('AR ESSENCE', '16') , fg = 'black')
         
         # Responder
         
-        self.conteudo_comentario1 = tk.StringVar(self.comentarios)        
+        self.conteudo_comentario11 = tk.StringVar(self.comentarios1)        
         
-        self.comentario_espaco = tk.Entry(self.comentarios)
-        self.comentario_espaco.grid(row=4, column=1, columnspan=5, sticky="nsew")
+        self.comentario_espaco1 = tk.Entry(self.comentarios1)
+        self.comentario_espaco1.grid(row=4, column=1, columnspan=5, sticky="nsew")
         
-        self.conteudo_comentario2 = tk.StringVar(self.comentarios)
+        self.conteudo_comentario21 = tk.StringVar(self.comentarios1)
         
-        self.conteudo_label = tk.StringVar(self.comentarios)
+        self.conteudo_label1 = tk.StringVar(self.comentarios1)
                 
-        self.botao_comentarios = tk.Button(self.comentarios)
-        self.botao_comentarios.grid(row=4, column=6, sticky="nsew")
-        self.botao_comentarios.configure(text="Responder", command=self.responder1, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')        
+        self.botao_comentarios1 = tk.Button(self.comentarios1)
+        self.botao_comentarios1.grid(row=4, column=6, sticky="nsew")
+        self.botao_comentarios1.configure(text="Responder", command=self.responder1, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '14'), fg='gray92')        
         
-        self.comentarios.tkraise()
+        self.comentarios1.tkraise()
         
         
     def entrar_pergunta2(self):
         
-        self.comentarios = tk.Frame(self.window)
-        self.comentarios.columnconfigure(0, minsize=50)
-        self.comentarios.columnconfigure(1, minsize=50)
-        self.comentarios.columnconfigure(2, minsize=50)
-        self.comentarios.columnconfigure(3, minsize=50)
-        self.comentarios.columnconfigure(4, minsize=50)
-        self.comentarios.columnconfigure(5, minsize=50)
-        self.comentarios.columnconfigure(6, minsize=50)
-        self.comentarios.columnconfigure(7, minsize=50)
-        self.comentarios.rowconfigure(0, minsize=60)
-        self.comentarios.rowconfigure(1, minsize=60)
-        self.comentarios.rowconfigure(2, minsize=60)
-        self.comentarios.rowconfigure(3, minsize=60)
-        self.comentarios.rowconfigure(4, minsize=60)
-        self.comentarios.rowconfigure(5, minsize=60)
-        self.comentarios.rowconfigure(6, minsize=60)
-        self.comentarios.rowconfigure(7, minsize=60)
-        self.comentarios.rowconfigure(8, minsize=60)
-        self.comentarios.rowconfigure(9, minsize=60)
-        self.comentarios.grid(row=0, column=0, sticky="nsew")
+        self.comentarios2 = tk.Frame(self.window)
+        self.comentarios2.columnconfigure(0, minsize=50)
+        self.comentarios2.columnconfigure(1, minsize=50)
+        self.comentarios2.columnconfigure(2, minsize=50)
+        self.comentarios2.columnconfigure(3, minsize=50)
+        self.comentarios2.columnconfigure(4, minsize=50)
+        self.comentarios2.columnconfigure(5, minsize=50)
+        self.comentarios2.columnconfigure(6, minsize=50)
+        self.comentarios2.columnconfigure(7, minsize=50)
+        self.comentarios2.rowconfigure(0, minsize=45)
+        self.comentarios2.rowconfigure(1, minsize=45)
+        self.comentarios2.rowconfigure(2, minsize=45)
+        self.comentarios2.rowconfigure(3, minsize=45)
+        self.comentarios2.rowconfigure(4, minsize=45)
+        self.comentarios2.rowconfigure(5, minsize=45)
+        self.comentarios2.rowconfigure(6, minsize=45)
+        self.comentarios2.rowconfigure(7, minsize=45)
+        self.comentarios2.rowconfigure(8, minsize=45)
+        self.comentarios2.rowconfigure(9, minsize=45)
+        self.comentarios2.rowconfigure(10, minsize=45)
+        self.comentarios2.rowconfigure(11, minsize=45)
+        self.comentarios2.grid(row=0, column=0, sticky="nsew")
         
-        self.background = tk.Label(self.comentarios, image=self.window.background) #BACKGROUND
-        self.background.grid(row = 0, column = 0) #BACKGROUND
-        self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
+        self.background2 = tk.Label(self.comentarios2, image=self.window.background) #BACKGROUND
+        self.background2.grid(row = 0, column = 0) #BACKGROUND
+        self.background2.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
              
-        self.voltar_perguntas = tk.Button(self.comentarios)
-        self.voltar_perguntas.grid(row=0, column=0, columnspan=2, sticky="nsew")
-        self.voltar_perguntas.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
-        self.voltar_perguntas.configure(command=self.voltar_as_perguntas2)
+        self.voltar_perguntas2 = tk.Button(self.comentarios2)
+        self.voltar_perguntas2.grid(row=0, column=0, columnspan=2, sticky="nsew")
+        self.voltar_perguntas2.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '14'), fg='gray92')
+        self.voltar_perguntas2.configure(command=self.voltar_as_perguntas2)
         
-        self.titulo_comentarios = tk.Label(self.comentarios)
-        self.titulo_comentarios.grid(row=2, column=1, columnspan=6, sticky="nsew")
+        self.titulo_comentarios2 = tk.Label(self.comentarios2)
+        self.titulo_comentarios2.grid(row=2, column=0, columnspan=8, sticky="nsew")
         forum2 = self.perg_janela2.get()
-        self.titulo_comentarios.configure(text=forum2)
+        self.titulo_comentarios2.configure(text=forum2, font =('AR ESSENCE', '16') , fg = 'black')
         
         # Responder
         
-        self.conteudo_comentario1 = tk.StringVar(self.comentarios)        
+        self.conteudo_comentario12 = tk.StringVar(self.comentarios2)        
         
-        self.comentario_espaco = tk.Entry(self.comentarios)
-        self.comentario_espaco.grid(row=4, column=1, columnspan=5, sticky="nsew")
+        self.comentario_espaco2 = tk.Entry(self.comentarios2)
+        self.comentario_espaco2.grid(row=4, column=1, columnspan=5, sticky="nsew")
         
-        self.conteudo_comentario2 = tk.StringVar(self.comentarios)
+        self.conteudo_comentario22 = tk.StringVar(self.comentarios2)
         
-        self.conteudo_label = tk.StringVar(self.comentarios)
+        self.conteudo_label2 = tk.StringVar(self.comentarios2)
                 
-        self.botao_comentarios = tk.Button(self.comentarios)
-        self.botao_comentarios.grid(row=4, column=6, sticky="nsew")
-        self.botao_comentarios.configure(text="Responder", command=self.responder2, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')        
+        self.botao_comentarios2 = tk.Button(self.comentarios2)
+        self.botao_comentarios2.grid(row=4, column=6, sticky="nsew")
+        self.botao_comentarios2.configure(text="Responder", command=self.responder2, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '14'), fg='gray92')        
         
-        self.comentarios.tkraise()
+        self.comentarios2.tkraise()
         
         
     def entrar_pergunta3(self):
         
-        self.comentarios = tk.Frame(self.window)
-        self.comentarios.columnconfigure(0, minsize=50)
-        self.comentarios.columnconfigure(1, minsize=50)
-        self.comentarios.columnconfigure(2, minsize=50)
-        self.comentarios.columnconfigure(3, minsize=50)
-        self.comentarios.columnconfigure(4, minsize=50)
-        self.comentarios.columnconfigure(5, minsize=50)
-        self.comentarios.columnconfigure(6, minsize=50)
-        self.comentarios.columnconfigure(7, minsize=50)
-        self.comentarios.rowconfigure(0, minsize=60)
-        self.comentarios.rowconfigure(1, minsize=60)
-        self.comentarios.rowconfigure(2, minsize=60)
-        self.comentarios.rowconfigure(3, minsize=60)
-        self.comentarios.rowconfigure(4, minsize=60)
-        self.comentarios.rowconfigure(5, minsize=60)
-        self.comentarios.rowconfigure(6, minsize=60)
-        self.comentarios.rowconfigure(7, minsize=60)
-        self.comentarios.rowconfigure(8, minsize=60)
-        self.comentarios.rowconfigure(9, minsize=60)
-        self.comentarios.grid(row=0, column=0, sticky="nsew")
+        self.comentarios3 = tk.Frame(self.window)
+        self.comentarios3.columnconfigure(0, minsize=50)
+        self.comentarios3.columnconfigure(1, minsize=50)
+        self.comentarios3.columnconfigure(2, minsize=50)
+        self.comentarios3.columnconfigure(3, minsize=50)
+        self.comentarios3.columnconfigure(4, minsize=50)
+        self.comentarios3.columnconfigure(5, minsize=50)
+        self.comentarios3.columnconfigure(6, minsize=50)
+        self.comentarios3.columnconfigure(7, minsize=50)
+        self.comentarios3.rowconfigure(0, minsize=45)
+        self.comentarios3.rowconfigure(1, minsize=45)
+        self.comentarios3.rowconfigure(2, minsize=45)
+        self.comentarios3.rowconfigure(3, minsize=45)
+        self.comentarios3.rowconfigure(4, minsize=45)
+        self.comentarios3.rowconfigure(5, minsize=45)
+        self.comentarios3.rowconfigure(6, minsize=45)
+        self.comentarios3.rowconfigure(7, minsize=45)
+        self.comentarios3.rowconfigure(8, minsize=45)
+        self.comentarios3.rowconfigure(9, minsize=45)
+        self.comentarios3.rowconfigure(10, minsize=45)
+        self.comentarios3.rowconfigure(11, minsize=45)
+        self.comentarios3.grid(row=0, column=0, sticky="nsew")
         
-        self.background = tk.Label(self.comentarios, image=self.window.background) #BACKGROUND
-        self.background.grid(row = 0, column = 0) #BACKGROUND
-        self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
+        self.background3 = tk.Label(self.comentarios3, image=self.window.background) #BACKGROUND
+        self.background3.grid(row = 0, column = 0) #BACKGROUND
+        self.background3.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
              
-        self.voltar_perguntas = tk.Button(self.comentarios)
-        self.voltar_perguntas.grid(row=0, column=0, columnspan=2, sticky="nsew")
-        self.voltar_perguntas.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
-        self.voltar_perguntas.configure(command=self.voltar_as_perguntas3)
+        self.voltar_perguntas3 = tk.Button(self.comentarios3)
+        self.voltar_perguntas3.grid(row=0, column=0, columnspan=2, sticky="nsew")
+        self.voltar_perguntas3.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '14'), fg='gray92')
+        self.voltar_perguntas3.configure(command=self.voltar_as_perguntas3)
         
-        self.titulo_comentarios = tk.Label(self.comentarios)
-        self.titulo_comentarios.grid(row=2, column=1, columnspan=6, sticky="nsew")
+        self.titulo_comentarios3 = tk.Label(self.comentarios3)
+        self.titulo_comentarios3.grid(row=2, column=0, columnspan=8, sticky="nsew")
         forum3 = self.perg_janela3.get()
-        self.titulo_comentarios.configure(text=forum3)
+        self.titulo_comentarios3.configure(text=forum3, font =('AR ESSENCE', '16') , fg = 'black')
         
         # Responder
         
-        self.conteudo_comentario1 = tk.StringVar(self.comentarios)        
+        self.conteudo_comentario13 = tk.StringVar(self.comentarios3)        
         
-        self.comentario_espaco = tk.Entry(self.comentarios)
-        self.comentario_espaco.grid(row=4, column=1, columnspan=5, sticky="nsew")
+        self.comentario_espaco3 = tk.Entry(self.comentarios3)
+        self.comentario_espaco3.grid(row=4, column=1, columnspan=5, sticky="nsew")
         
-        self.conteudo_comentario2 = tk.StringVar(self.comentarios)
+        self.conteudo_comentario23 = tk.StringVar(self.comentarios3)
         
-        self.conteudo_label = tk.StringVar(self.comentarios)
+        self.conteudo_label3 = tk.StringVar(self.comentarios3)
                 
-        self.botao_comentarios = tk.Button(self.comentarios)
-        self.botao_comentarios.grid(row=4, column=6, sticky="nsew")
-        self.botao_comentarios.configure(text="Responder", command=self.responder3, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')        
+        self.botao_comentarios3 = tk.Button(self.comentarios3)
+        self.botao_comentarios3.grid(row=4, column=6, sticky="nsew")
+        self.botao_comentarios3.configure(text="Responder", command=self.responder3, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '14'), fg='gray92')        
         
-        self.comentarios.tkraise()
+        self.comentarios3.tkraise()
         
         
     def entrar_pergunta4(self):
         
-        self.comentarios = tk.Frame(self.window)
-        self.comentarios.columnconfigure(0, minsize=50)
-        self.comentarios.columnconfigure(1, minsize=50)
-        self.comentarios.columnconfigure(2, minsize=50)
-        self.comentarios.columnconfigure(3, minsize=50)
-        self.comentarios.columnconfigure(4, minsize=50)
-        self.comentarios.columnconfigure(5, minsize=50)
-        self.comentarios.columnconfigure(6, minsize=50)
-        self.comentarios.columnconfigure(7, minsize=50)
-        self.comentarios.rowconfigure(0, minsize=60)
-        self.comentarios.rowconfigure(1, minsize=60)
-        self.comentarios.rowconfigure(2, minsize=60)
-        self.comentarios.rowconfigure(3, minsize=60)
-        self.comentarios.rowconfigure(4, minsize=60)
-        self.comentarios.rowconfigure(5, minsize=60)
-        self.comentarios.rowconfigure(6, minsize=60)
-        self.comentarios.rowconfigure(7, minsize=60)
-        self.comentarios.rowconfigure(8, minsize=60)
-        self.comentarios.rowconfigure(9, minsize=60)
-        self.comentarios.grid(row=0, column=0, sticky="nsew")
+        self.comentarios4 = tk.Frame(self.window)
+        self.comentarios4.columnconfigure(0, minsize=50)
+        self.comentarios4.columnconfigure(1, minsize=50)
+        self.comentarios4.columnconfigure(2, minsize=50)
+        self.comentarios4.columnconfigure(3, minsize=50)
+        self.comentarios4.columnconfigure(4, minsize=50)
+        self.comentarios4.columnconfigure(5, minsize=50)
+        self.comentarios4.columnconfigure(6, minsize=50)
+        self.comentarios4.columnconfigure(7, minsize=50)
+        self.comentarios4.rowconfigure(0, minsize=45)
+        self.comentarios4.rowconfigure(1, minsize=45)
+        self.comentarios4.rowconfigure(2, minsize=45)
+        self.comentarios4.rowconfigure(3, minsize=45)
+        self.comentarios4.rowconfigure(4, minsize=45)
+        self.comentarios4.rowconfigure(5, minsize=45)
+        self.comentarios4.rowconfigure(6, minsize=45)
+        self.comentarios4.rowconfigure(7, minsize=45)
+        self.comentarios4.rowconfigure(8, minsize=45)
+        self.comentarios4.rowconfigure(9, minsize=45)
+        self.comentarios4.rowconfigure(10, minsize=45)
+        self.comentarios4.rowconfigure(11, minsize=45)
+        self.comentarios4.grid(row=0, column=0, sticky="nsew")
         
-        self.background = tk.Label(self.comentarios, image=self.window.background) #BACKGROUND
-        self.background.grid(row = 0, column = 0) #BACKGROUND
-        self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
+        self.background4 = tk.Label(self.comentarios4, image=self.window.background) #BACKGROUND
+        self.background4.grid(row = 0, column = 0) #BACKGROUND
+        self.background4.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
              
-        self.voltar_perguntas = tk.Button(self.comentarios)
-        self.voltar_perguntas.grid(row=0, column=0, columnspan=2, sticky="nsew")
-        self.voltar_perguntas.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
-        self.voltar_perguntas.configure(command=self.voltar_as_perguntas4)
+        self.voltar_perguntas4 = tk.Button(self.comentarios4)
+        self.voltar_perguntas4.grid(row=0, column=0, columnspan=2, sticky="nsew")
+        self.voltar_perguntas4.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '14'), fg='gray92')
+        self.voltar_perguntas4.configure(command=self.voltar_as_perguntas4)
         
-        self.titulo_comentarios = tk.Label(self.comentarios)
-        self.titulo_comentarios.grid(row=2, column=1, columnspan=6, sticky="nsew")
+        self.titulo_comentarios4 = tk.Label(self.comentarios4)
+        self.titulo_comentarios4.grid(row=2, column=0, columnspan=8, sticky="nsew")
         forum4 = self.perg_janela4.get()
-        self.titulo_comentarios.configure(text=forum4)
+        self.titulo_comentarios4.configure(text=forum4, font =('AR ESSENCE', '16') , fg = 'black')
         
         # Responder
         
-        self.conteudo_comentario1 = tk.StringVar(self.comentarios)        
+        self.conteudo_comentario14 = tk.StringVar(self.comentarios4)        
         
-        self.comentario_espaco = tk.Entry(self.comentarios)
-        self.comentario_espaco.grid(row=4, column=1, columnspan=5, sticky="nsew")
+        self.comentario_espaco4 = tk.Entry(self.comentarios4)
+        self.comentario_espaco4.grid(row=4, column=1, columnspan=5, sticky="nsew")
         
-        self.conteudo_comentario2 = tk.StringVar(self.comentarios)
+        self.conteudo_comentario24 = tk.StringVar(self.comentarios4)
         
-        self.conteudo_label = tk.StringVar(self.comentarios)
+        self.conteudo_label4 = tk.StringVar(self.comentarios4)
                 
-        self.botao_comentarios = tk.Button(self.comentarios)
-        self.botao_comentarios.grid(row=4, column=6, sticky="nsew")
-        self.botao_comentarios.configure(text="Responder", command=self.responder4, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')        
+        self.botao_comentarios4 = tk.Button(self.comentarios4)
+        self.botao_comentarios4.grid(row=4, column=6, sticky="nsew")
+        self.botao_comentarios4.configure(text="Responder", command=self.responder4, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '14'), fg='gray92')        
         
-        self.comentarios.tkraise()
+        self.comentarios4.tkraise()
     
     
     def entrar_pergunta5(self):
         
-        self.comentarios = tk.Frame(self.window)
-        self.comentarios.columnconfigure(0, minsize=50)
-        self.comentarios.columnconfigure(1, minsize=50)
-        self.comentarios.columnconfigure(2, minsize=50)
-        self.comentarios.columnconfigure(3, minsize=50)
-        self.comentarios.columnconfigure(4, minsize=50)
-        self.comentarios.columnconfigure(5, minsize=50)
-        self.comentarios.columnconfigure(6, minsize=50)
-        self.comentarios.columnconfigure(7, minsize=50)
-        self.comentarios.rowconfigure(0, minsize=60)
-        self.comentarios.rowconfigure(1, minsize=60)
-        self.comentarios.rowconfigure(2, minsize=60)
-        self.comentarios.rowconfigure(3, minsize=60)
-        self.comentarios.rowconfigure(4, minsize=60)
-        self.comentarios.rowconfigure(5, minsize=60)
-        self.comentarios.rowconfigure(6, minsize=60)
-        self.comentarios.rowconfigure(7, minsize=60)
-        self.comentarios.rowconfigure(8, minsize=60)
-        self.comentarios.rowconfigure(9, minsize=60)
-        self.comentarios.grid(row=0, column=0, sticky="nsew")
+        self.comentarios5 = tk.Frame(self.window)
+        self.comentarios5.columnconfigure(0, minsize=50)
+        self.comentarios5.columnconfigure(1, minsize=50)
+        self.comentarios5.columnconfigure(2, minsize=50)
+        self.comentarios5.columnconfigure(3, minsize=50)
+        self.comentarios5.columnconfigure(4, minsize=50)
+        self.comentarios5.columnconfigure(5, minsize=50)
+        self.comentarios5.columnconfigure(6, minsize=50)
+        self.comentarios5.columnconfigure(7, minsize=50)
+        self.comentarios5.rowconfigure(0, minsize=45)
+        self.comentarios5.rowconfigure(1, minsize=45)
+        self.comentarios5.rowconfigure(2, minsize=45)
+        self.comentarios5.rowconfigure(3, minsize=45)
+        self.comentarios5.rowconfigure(4, minsize=45)
+        self.comentarios5.rowconfigure(5, minsize=45)
+        self.comentarios5.rowconfigure(6, minsize=45)
+        self.comentarios5.rowconfigure(7, minsize=45)
+        self.comentarios5.rowconfigure(8, minsize=45)
+        self.comentarios5.rowconfigure(9, minsize=45)
+        self.comentarios5.rowconfigure(10, minsize=45)
+        self.comentarios5.rowconfigure(11, minsize=45)
+        self.comentarios5.grid(row=0, column=0, sticky="nsew")
         
-        self.background = tk.Label(self.comentarios, image=self.window.background) #BACKGROUND
-        self.background.grid(row = 0, column = 0) #BACKGROUND
-        self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
+        self.background5 = tk.Label(self.comentarios5, image=self.window.background) #BACKGROUND
+        self.background5.grid(row = 0, column = 0) #BACKGROUND
+        self.background5.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
              
-        self.voltar_perguntas = tk.Button(self.comentarios)
-        self.voltar_perguntas.grid(row=0, column=0, columnspan=2, sticky="nsew")
-        self.voltar_perguntas.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
-        self.voltar_perguntas.configure(command=self.voltar_as_perguntas5)
+        self.voltar_perguntas5 = tk.Button(self.comentarios5)
+        self.voltar_perguntas5.grid(row=0, column=0, columnspan=2, sticky="nsew")
+        self.voltar_perguntas5.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '14'), fg='gray92')
+        self.voltar_perguntas5.configure(command=self.voltar_as_perguntas5)
         
-        self.titulo_comentarios = tk.Label(self.comentarios)
-        self.titulo_comentarios.grid(row=2, column=1, columnspan=6, sticky="nsew")
+        self.titulo_comentarios5 = tk.Label(self.comentarios5)
+        self.titulo_comentarios5.grid(row=2, column=0, columnspan=8, sticky="nsew")
         forum5 = self.perg_janela5.get()
-        self.titulo_comentarios.configure(text=forum5)
+        self.titulo_comentarios5.configure(text=forum5, font =('AR ESSENCE', '16') , fg = 'black')
         
         # Responder
         
-        self.conteudo_comentario1 = tk.StringVar(self.comentarios)        
+        self.conteudo_comentario15 = tk.StringVar(self.comentarios5)        
         
-        self.comentario_espaco = tk.Entry(self.comentarios)
-        self.comentario_espaco.grid(row=4, column=1, columnspan=5, sticky="nsew")
+        self.comentario_espaco5 = tk.Entry(self.comentarios5)
+        self.comentario_espaco5.grid(row=4, column=1, columnspan=5, sticky="nsew")
         
-        self.conteudo_comentario2 = tk.StringVar(self.comentarios)
+        self.conteudo_comentario25 = tk.StringVar(self.comentarios5)
         
-        self.conteudo_label = tk.StringVar(self.comentarios)
+        self.conteudo_label5 = tk.StringVar(self.comentarios5)
                 
-        self.botao_comentarios = tk.Button(self.comentarios)
-        self.botao_comentarios.grid(row=4, column=6, sticky="nsew")
-        self.botao_comentarios.configure(text="Responder", command=self.responder5, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')        
+        self.botao_comentarios5 = tk.Button(self.comentarios5)
+        self.botao_comentarios5.grid(row=4, column=6, sticky="nsew")
+        self.botao_comentarios5.configure(text="Responder", command=self.responder5, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '14'), fg='gray92')        
         
-        self.comentarios.tkraise()
+        self.comentarios5.tkraise()
     
     
     def entrar_pergunta6(self):
         
-        self.comentarios = tk.Frame(self.window)
-        self.comentarios.columnconfigure(0, minsize=50)
-        self.comentarios.columnconfigure(1, minsize=50)
-        self.comentarios.columnconfigure(2, minsize=50)
-        self.comentarios.columnconfigure(3, minsize=50)
-        self.comentarios.columnconfigure(4, minsize=50)
-        self.comentarios.columnconfigure(5, minsize=50)
-        self.comentarios.columnconfigure(6, minsize=50)
-        self.comentarios.columnconfigure(7, minsize=50)
-        self.comentarios.rowconfigure(0, minsize=60)
-        self.comentarios.rowconfigure(1, minsize=60)
-        self.comentarios.rowconfigure(2, minsize=60)
-        self.comentarios.rowconfigure(3, minsize=60)
-        self.comentarios.rowconfigure(4, minsize=60)
-        self.comentarios.rowconfigure(5, minsize=60)
-        self.comentarios.rowconfigure(6, minsize=60)
-        self.comentarios.rowconfigure(7, minsize=60)
-        self.comentarios.rowconfigure(8, minsize=60)
-        self.comentarios.rowconfigure(9, minsize=60)
-        self.comentarios.grid(row=0, column=0, sticky="nsew")
+        self.comentarios6 = tk.Frame(self.window)
+        self.comentarios6.columnconfigure(0, minsize=50)
+        self.comentarios6.columnconfigure(1, minsize=50)
+        self.comentarios6.columnconfigure(2, minsize=50)
+        self.comentarios6.columnconfigure(3, minsize=50)
+        self.comentarios6.columnconfigure(4, minsize=50)
+        self.comentarios6.columnconfigure(5, minsize=50)
+        self.comentarios6.columnconfigure(6, minsize=50)
+        self.comentarios6.columnconfigure(7, minsize=50)
+        self.comentarios6.rowconfigure(0, minsize=45)
+        self.comentarios6.rowconfigure(1, minsize=45)
+        self.comentarios6.rowconfigure(2, minsize=45)
+        self.comentarios6.rowconfigure(3, minsize=45)
+        self.comentarios6.rowconfigure(4, minsize=45)
+        self.comentarios6.rowconfigure(5, minsize=45)
+        self.comentarios6.rowconfigure(6, minsize=45)
+        self.comentarios6.rowconfigure(7, minsize=45)
+        self.comentarios6.rowconfigure(8, minsize=45)
+        self.comentarios6.rowconfigure(9, minsize=45)
+        self.comentarios6.rowconfigure(10, minsize=45)
+        self.comentarios6.rowconfigure(11, minsize=45)
+        self.comentarios6.grid(row=0, column=0, sticky="nsew")
         
-        self.background = tk.Label(self.comentarios, image=self.window.background) #BACKGROUND
-        self.background.grid(row = 0, column = 0) #BACKGROUND
-        self.background.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
+        self.background6 = tk.Label(self.comentarios6, image=self.window.background) #BACKGROUND
+        self.background6.grid(row = 0, column = 0) #BACKGROUND
+        self.background6.place(x=0, y=0, relwidth=1, relheight=1) #BACKGROUND
              
-        self.voltar_perguntas = tk.Button(self.comentarios)
-        self.voltar_perguntas.grid(row=0, column=0, columnspan=2, sticky="nsew")
-        self.voltar_perguntas.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')
-        self.voltar_perguntas.configure(command=self.voltar_as_perguntas6)
+        self.voltar_perguntas6 = tk.Button(self.comentarios6)
+        self.voltar_perguntas6.grid(row=0, column=0, columnspan=2, sticky="nsew")
+        self.voltar_perguntas6.configure(text="Voltar", background = 'navy', borderwidth = 3, font=('AR ESSENCE', '14'), fg='gray92')
+        self.voltar_perguntas6.configure(command=self.voltar_as_perguntas6)
         
-        self.titulo_comentarios = tk.Label(self.comentarios)
-        self.titulo_comentarios.grid(row=2, column=1, columnspan=6, sticky="nsew")
+        self.titulo_comentarios6 = tk.Label(self.comentarios6)
+        self.titulo_comentarios6.grid(row=2, column=0, columnspan=8, sticky="nsew")
         forum6 = self.perg_janela6.get()
-        self.titulo_comentarios.configure(text=forum6)
+        self.titulo_comentarios6.configure(text=forum6, font =('AR ESSENCE', '16') , fg = 'black')
         
         # Responder
         
-        self.conteudo_comentario1 = tk.StringVar(self.comentarios)        
+        self.conteudo_comentario16 = tk.StringVar(self.comentarios6)        
         
-        self.comentario_espaco = tk.Entry(self.comentarios)
-        self.comentario_espaco.grid(row=4, column=1, columnspan=5, sticky="nsew")
+        self.comentario_espaco6 = tk.Entry(self.comentarios6)
+        self.comentario_espaco6.grid(row=4, column=1, columnspan=5, sticky="nsew")
         
-        self.conteudo_comentario2 = tk.StringVar(self.comentarios)
+        self.conteudo_comentario26 = tk.StringVar(self.comentarios6)
         
-        self.conteudo_label = tk.StringVar(self.comentarios)
+        self.conteudo_label6 = tk.StringVar(self.comentarios6)
                 
-        self.botao_comentarios = tk.Button(self.comentarios)
-        self.botao_comentarios.grid(row=4, column=6, sticky="nsew")
-        self.botao_comentarios.configure(text="Responder", command=self.responder6, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '18'), fg='gray92')        
+        self.botao_comentarios6 = tk.Button(self.comentarios6)
+        self.botao_comentarios6.grid(row=4, column=6, sticky="nsew")
+        self.botao_comentarios6.configure(text="Responder", command=self.responder6, background = 'navy', borderwidth = 3, font=('AR ESSENCE', '14'), fg='gray92')        
         
-        self.comentarios.tkraise()
+        self.comentarios6.tkraise()
     
     
     def voltar_pagina_inicial(self):
